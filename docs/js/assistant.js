@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatSendBtn = document.getElementById('chat-send-btn');
     
     const botAvatarUrl = 'assets/images/favicon/favicon-96x96.png';
+    let chatHistory = [];
+
+    // --- Core Functions ---
 
     const toggleChatVisibility = () => {
         chatWidget.classList.toggle('show');
@@ -16,10 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => chatInput.focus(), 100); 
         }
     };
-
-    chatToggle.addEventListener('click', toggleChatVisibility);
-
-    chatCloseBtn.addEventListener('click', toggleChatVisibility);
 
     const showTypingIndicator = () => {
         const indicator = document.createElement('div');
@@ -39,11 +38,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (indicator) indicator.remove();
     };
 
-    const addTextMessage = (text, sender) => {
+    const addMessage = (sender, text) => {
         const messageElement = document.createElement('div');
         messageElement.classList.add('message', `${sender}-message`);
         
-        let contentHTML = `<div class="message-content"><p>${text}</p></div>`;
+        let contentHTML = `<div class="message-content"><p>${text.replace(/\n/g, '<br>')}</p></div>`;
         
         if (sender === 'bot') {
             messageElement.innerHTML = `<img src="${botAvatarUrl}" class="chat-avatar" alt="Bot Avatar">` + contentHTML;
@@ -55,65 +54,54 @@ document.addEventListener('DOMContentLoaded', () => {
         chatMessages.scrollTop = chatMessages.scrollHeight;
     };
 
-    const addQuickReplies = (replies) => {
-        const repliesContainer = document.createElement('div');
-        repliesContainer.classList.add('quick-replies');
-        repliesContainer.innerHTML = replies.map(reply => `<button class="qr-button" data-value="${reply}">${reply}</button>`).join('');
-        
-        chatMessages.appendChild(repliesContainer);
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-
-        repliesContainer.addEventListener('click', (event) => {
-            const target = event.target;
-            if (target.classList.contains('qr-button')) {
-                const value = target.dataset.value;
-                handleQuickReplyClick(value, repliesContainer);
-            }
-        });
-    };
-
-    const handleQuickReplyClick = (value, container) => {
-        addTextMessage(value, 'user');
-        container.remove();
-        handleBotResponse(value);
-    };
-
-    const handleBotResponse = (inputText) => {
+    const handleApiCall = async (query) => {
         showTypingIndicator();
-        setTimeout(() => {
-            hideTypingIndicator();
-            let botResponse = "I'm not sure how to answer that. For detailed queries, please use the contact form below.";
-            const lowerInput = inputText.toLowerCase();
 
-            if (lowerInput.includes('services')) {
-                botResponse = "We offer AI education for schools, universities, and corporations, as well as custom AI solutions. What are you most interested in?";
-            } else if (lowerInput.includes('about')) {
-                botResponse = "Udayam AI Labs is dedicated to empowering the next generation with cutting-edge AI education and technology solutions.";
-            } else if (lowerInput.includes('contact')) {
-                botResponse = "You can reach us at support@udayam.co.in or call +91-8600302429. The contact form is also available at the bottom of the page.";
+        try {
+            const response = await fetch('http://localhost:3000/api/query', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ query, history: chatHistory.slice(0, -1) }) 
+            });
+
+            if (!response.ok) {
+                throw new Error(`API Error: ${response.statusText}`);
             }
-            
-            addTextMessage(botResponse, 'bot');
-        }, 1500);
+
+            const data = await response.json();
+
+            hideTypingIndicator();
+            addMessage('bot', data.answer);
+            chatHistory.push({ type: 'bot', content: data.answer });
+
+        } catch (error) {
+            console.error(error);
+            hideTypingIndicator();
+            addMessage('bot', 'Sorry, I encountered an error. Please try again.');
+        }
     };
     
     const handleSendMessage = () => {
         const userText = chatInput.value.trim();
         if (userText) {
-            addTextMessage(userText, 'user');
+            addMessage('user', userText);
+            chatHistory.push({ type: 'user', content: userText });
             chatInput.value = '';
-            const existingReplies = document.querySelector('.quick-replies');
-            if (existingReplies) existingReplies.remove();
             
-            handleBotResponse(userText);
+            // Call the API instead of the old bot logic
+            handleApiCall(userText);
         }
     };
+    
+    // --- Initial Message & Event Listeners ---
 
     const showWelcomeMessage = () => {
-        addTextMessage("Hello! I'm the Udayam AI assistant. How can I help you today?", 'bot');
-        addQuickReplies(['Our Services', 'About Us', 'Contact Info']);
+        addMessage('bot', "Hello! I'm the Udayam AI assistant. How can I help you today?");
+        chatHistory.push({ type: 'bot', content: "Hello! I'm the Udayam AI assistant. How can I help you today?" });
     };
     
+    chatToggle.addEventListener('click', toggleChatVisibility);
+    chatCloseBtn.addEventListener('click', toggleChatVisibility);
     chatSendBtn.addEventListener('click', handleSendMessage);
     chatInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') handleSendMessage();

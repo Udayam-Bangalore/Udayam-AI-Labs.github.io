@@ -1,3 +1,14 @@
-.vscode/
-notas.md
+/backend/node_modules/
+/backend/.env
 
+/backend/*.log
+/backend/npm-debug.log*
+/backend/yarn-debug.log*
+/backend/yarn-error.log*
+
+.idea/
+
+.DS_Store
+Thumbs.db
+config.bat
+node_modules

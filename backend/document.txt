@@ -1,0 +1,91 @@
+=======================================
+Udayam AI Labs: Company and Services Data
+=======================================
+
+DOCUMENT_TYPE: Factual Company Profile
+OPTIMIZED_FOR: RAG, Information Retrieval
+VERSION: 1.0
+
+---
+SUMMARY
+---
+
+Udayam AI Labs is an educational technology company specializing in training for Artificial Intelligence (AI), Robotics, IoT, and Drones. The company also develops custom AI and technology solutions. Its client base includes schools, universities, and corporations.
+
+---
+CORE SERVICES
+---
+
+1. EDUCATION AND TRAINING
+
+   School FutureTech Education:
+     - Target Audience: Young learners in schools.
+     - Subjects: AI, Robotics, Internet of Things (IoT), Drones.
+     - Methodology: Interactive, age-appropriate learning with hands-on projects. Uses tools like PictoBlox for teaching coding and logical thinking.
+
+   University/College FutureTech Education:
+     - Target Audience: Higher education students.
+     - Content: Advanced programs in AI, Robotics, and emerging technologies.
+     - Goal: Align with academic curricula and prepare students for technology careers.
+
+   Corporate AI & Tech Training:
+     - Target Audience: Business professionals and corporate teams.
+     - Content: Customized workshops and training on AI, Data, and Automation.
+     - Goal: Equip professionals with practical skills relevant to their industry and role.
+
+   Faculty Development Programs (FDPs):
+     - Target Audience: Educators and faculty.
+     - Content: Guided exercises on practical AI implementation for teaching.
+     - Goal: Build confidence and provide creative ideas for integrating technology into education.
+
+2. TECHNOLOGY SOLUTIONS
+
+   AI & Tech Solutions Design:
+     - Target Audience: Businesses and institutions.
+     - Offerings: Development of custom technology solutions.
+     - Examples: AI-powered chatbots, intelligent automation tools, robotics integration, domain-specific generative AI applications (Custom GPTs).
+
+---
+COMPANY INFORMATION (FAQ FORMAT)
+---
+
+Q: What is Udayam AI Labs?
+A: Udayam AI Labs is a company focused on AI education and custom technology solutions. Its mission is to bridge the gap between academic learning and real-world technology application.
+
+Q: Who are the clients of Udayam AI Labs?
+A: Clients include school students, university students, educators, corporate professionals, and businesses seeking technology solutions.
+
+Q: What technologies does Udayam AI Labs teach?
+A: The main technologies taught are Artificial Intelligence (AI), Robotics, Internet of Things (IoT), Drones, and Data Science.
+
+Q: How does Udayam AI Labs make learning interactive?
+A: For students, it uses tools like PictoBlox for interactive coding education. The general methodology emphasizes hands-on projects and practical exercises.
+
+Q: Who are the partners of Udayam AI Labs?
+A: Key partners are STEMpedia (a global STEM education leader) and Kaizen Engineering.
+
+Q: What is the mission of Udayam AI Labs?
+A: The company's mission is to unlock potential through innovation and education in AI, helping clients to learn, build, and grow with technology.
+
+---
+TEAM AND LEADERSHIP
+---
+
+- Udayraj Patare: Founder & Managing Director
+- Sarthak Sathu: Co-founder (MTech, IISc)
+- Pravin Raut: Generative AI Engineer
+
+---
+CLIENT FEEDBACK SUMMARY
+---
+
+- School Programs: Positive feedback received from a parent regarding hands-on robotics sessions for their daughter.
+- Faculty Programs: A teacher (Priyanka M., TGT Science) reported that a workshop built confidence and provided creative teaching ideas.
+- Corporate Training: A corporate client (Udayam AI Labs) reported transformed team productivity from practical and applicable training.
+- Advanced Workshops: A research participant (Ayesha S., NIPER-Kolkata) found a workshop on AI in Pharma useful for future research applications.
+
+---
+CONTACT - email address: support@udayam.co.in
+CONTACT - Phone Number: +91-8600302429
+
+END OF FILE
