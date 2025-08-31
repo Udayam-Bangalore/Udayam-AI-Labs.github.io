@@ -5,11 +5,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Udayam AI Labs</title>
-  
-  <meta name="description" 
-   content="Udayam AI Labs provides AI education, training, and custom AI solutions for schools, universities, corporations, and businesses." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="description"
+    content="Udayam AI Labs provides AI education, training, and custom AI solutions for schools, universities, corporations, and businesses." />
 
-  <!-- Meta tags for WhatsApp/Facebook preview -->
   <meta property="og:title" content="Udayam AI Labs" />
   <meta property="og:description"
     content="Learn and build with AI. Services: School AI Education, College AI Education, Corporate Training, AI Solutions Design." />
@@ -17,38 +16,33 @@
   <meta property="og:url" content="https://udayam-ai-labs.github.io/" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-  <!-- starts favicons -->
   <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg" />
   <link rel="shortcut icon" href="assets/images/favicon/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="Udayam AI Labs" />
   <link rel="manifest" href="assets/images/favicon/site.webmanifest" />
-  <!-- ends favicon -->
-
-  <!-- CSS file link -->
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/assistant.css" />
 </head>
 
 <body>
   <header>
-  <!-- Navbar -->
     <nav class="nav-container" aria-label="Main navigation">
       <div class="logo-container">
         <a href="/" class="logo-link">
-         <img src="assets/images/logo.png" alt="Udayam AI Labs logo"/>
-         <span class="nav-title">Udayam AI Labs</span>
+          <img src="assets/images/logo.png" alt="Udayam AI Labs logo" />
+          <span class="nav-title">Udayam AI Labs</span>
         </a>
       </div>
-      <button class="menu-toggle" id="menu-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation menu">
+      <button class="menu-toggle" id="menu-toggle" aria-controls="nav-links" aria-expanded="false"
+        aria-label="Toggle navigation menu">
         <i class="fa-solid fa-bars" aria-hidden="true"></i>
       </button>
       <ul class="nav-links" id="nav-links">
@@ -61,16 +55,15 @@
       </ul>
     </nav>
   </header>
-  <!-- Hero Section -->
   <section id="hero-section" class="hero-section" aria-labelledby="hero-heading">
     <div class="hero-section-text">
       <span class="tagline">Udayam AI Labs - Empowering the NextGen with Cutting Edge Solutions</span>
       <h2 id="hero-heading">AI & Technology Education for Schools, Universities & Corporates</h2>
-      <p>Transform learning with cutting-edge AI, robotics, and emerging technologies through comprehensive educational programs tailored for every level.</p>
-    </div>       
+      <p>Transform learning with cutting-edge AI, robotics, and emerging technologies through comprehensive
+        educational programs tailored for every level.</p>
+    </div>
   </section>
 
-  <!-- Services Section -->
   <section id="services" class="services">
     <div class="container">
       <h2>Our Services</h2>
@@ -111,7 +104,8 @@
             <i class="fas fa-cogs"></i>
           </div>
           <h3>AI & Tech Solutions Design</h3>
-          <p>Custom solutions including AI-powered chatbots, automation tools, robotics integration, and domain-specific
+          <p>Custom solutions including AI-powered chatbots, automation tools, robotics integration, and
+            domain-specific
             generative AI applications.</p>
           <div class="service-hover-effect"></div>
         </div>
@@ -119,13 +113,13 @@
     </div>
   </section>
 
-  <!-- Training Highlights -->
   <section id="gallery" class="gallery">
     <div class="container">
       <h2>Training Highlights</h2>
       <div class="gallery-underline"></div>
       <div class="card-wrapper">
-        <button class="card-btn" id="prevBtn" aria-label="Previous Slide"><i class="fa-solid fa-angles-left" aria-hidden="true"></i></button>
+        <button class="card-btn" id="prevBtn" aria-label="Previous Slide"><i class="fa-solid fa-angles-left"
+            aria-hidden="true"></i></button>
         <article class="card" id="card" aria-live="polite">
           <figure class="card-media">
             <img id="cardImage" src="" alt="" />
@@ -142,110 +136,145 @@
             </div>
           </section>
         </article>
-        <button class="card-btn" id="nextBtn" aria-label="Next Slide"><i class="fa-solid fa-angles-right" aria-hidden="true"></i></button>
+        <button class="card-btn" id="nextBtn" aria-label="Next Slide"><i class="fa-solid fa-angles-right"
+            aria-hidden="true"></i></button>
       </div>
       <div class="dots" id="dotsContainer" aria-label="Slide indicators"></div>
     </div>
   </section>
 
-  <!-- About Section -->
   <section id="about" class="about">
     <div class="container">
       <h2>About Udayam AI Labs</h2>
       <div class="about-underline"></div>
       <div class="accordion-container">
-          <div class="accordion-item">
-            <div class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="content-1" aria-labelledby="title-1">
-              <h3 class="accordion-title" id="title-1">What we are?</h3> 
-               <span class="accordion-icon" aria-hidden="true"><i class="fa-solid fa-caret-down" aria-hidden="true"></i></span>
-            </div>
-            <div class="accordion-content" id="content-1" tabindex="-1" role="region" aria-labelledby="title-1" aria-hidden="true">
-             <div class="content-wrapper">    <p class="content-text">
-                At Udayam AI Labs, we are committed to empowering the next generation of thinkers, creators, and innovators through cutting-edge 
-                AI education and technology solutions. Founded with a vision to bridge the gap between academic learning and real-world application,
-                we provide comprehensive training, resources, and expert guidance tailored for students, educators, and professionals alike.
-              </p>
-              </div>
-            </div>
-          </div> 
-          <div class="accordion-item">
-           <div class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="content-2" aria-labelledby="title-2">
-             <h3 class="accordion-title" id="title-2">What we do?</h3>
-             <span class="accordion-icon" aria-hidden="true"><i class="fa-solid fa-caret-down" aria-hidden="true"></i></span>
-           </div>
-           <div class="accordion-content" id="content-2" tabindex="-1" role="region" aria-labelledby="title-2" aria-hidden="true">
-             <div class="content-wrapper">
+        <div class="accordion-item">
+          <div class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="content-1"
+            aria-labelledby="title-1">
+            <h3 class="accordion-title" id="title-1">What we are?</h3>
+            <span class="accordion-icon" aria-hidden="true"><i class="fa-solid fa-caret-down"
+                aria-hidden="true"></i></span>
+          </div>
+          <div class="accordion-content" id="content-1" tabindex="-1" role="region" aria-labelledby="title-1"
+            aria-hidden="true">
+            <div class="content-wrapper">
               <p class="content-text">
-                Our programs are thoughtfully designed to demystify artificial intelligence, making it both accessible and practical for learners at every stage. We collaborate with schools, colleges, universities, and corporations to deliver impactful workshops, hands-on coding sessions, and industry-aligned courses in AI and data science.      </p>
+                At Udayam AI Labs, we are committed to empowering the next generation of thinkers, creators, and
+                innovators through cutting-edge
+                AI education and technology solutions. Founded with a vision to bridge the gap between academic
+                learning and real-world application,
+                we provide comprehensive training, resources, and expert guidance tailored for students, educators, and
+                professionals alike.
+              </p>
             </div>
           </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="content-2"
+            aria-labelledby="title-2">
+            <h3 class="accordion-title" id="title-2">What we do?</h3>
+            <span class="accordion-icon" aria-hidden="true"><i class="fa-solid fa-caret-down"
+                aria-hidden="true"></i></span>
           </div>
-          <div class="accordion-item">
-            <div class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="content-3" aria-labelledby="title-3">
-              <h3 class="accordion-title" id="title-3">How do we make learning fun?</h3> 
-               <span class="accordion-icon" aria-hidden="true"><i class="fa-solid fa-caret-down" aria-hidden="true"></i></span>
+          <div class="accordion-content" id="content-2" tabindex="-1" role="region" aria-labelledby="title-2"
+            aria-hidden="true">
+            <div class="content-wrapper">
+              <p class="content-text">
+                Our programs are thoughtfully designed to demystify artificial intelligence, making it both
+                accessible and practical for learners at every stage. We collaborate with schools, colleges,
+                universities, and corporations to deliver impactful workshops, hands-on coding sessions, and
+                industry-aligned courses in AI and data science. </p>
             </div>
-            <div class="accordion-content" id="content-3" tabindex="-1" role="region" aria-labelledby="title-3" aria-hidden="true">
-            <div class="content-wrapper"> <p class="content-text">
-                To make learning fun and effective, we integrate innovative tools like PictoBlox, enabling school students to build essential 
-                coding and logical thinking skills in an interactive environment. Our mission is to create a strong foundation for future careers
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="content-3"
+            aria-labelledby="title-3">
+            <h3 class="accordion-title" id="title-3">How do we make learning fun?</h3>
+            <span class="accordion-icon" aria-hidden="true"><i class="fa-solid fa-caret-down"
+                aria-hidden="true"></i></span>
+          </div>
+          <div class="accordion-content" id="content-3" tabindex="-1" role="region" aria-labelledby="title-3"
+            aria-hidden="true">
+            <div class="content-wrapper">
+              <p class="content-text">
+                To make learning fun and effective, we integrate innovative tools like PictoBlox, enabling school
+                students to build essential
+                coding and logical thinking skills in an interactive environment. Our mission is to create a strong
+                foundation for future careers
                 in technology, while nurturing creativity and problem-solving abilities.
               </p>
-              </div> 
             </div>
           </div>
-          <div class="accordion-item">
-            <div class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="content-4" aria-labelledby="title-4">
-              <h3 class="accordion-title" id="title-4">Who is our partner?</h3> 
-               <span class="accordion-icon" aria-hidden="true"><i class="fa-solid fa-caret-down" aria-hidden="ture"></i></span>
-            </div>
-            <div class="accordion-content" id="content-4" tabindex="-1" role="region" aria-labelledby="title-4" aria-hidden="true">
-            <div class="content-wrapper">     <p class="content-text">
-                We are proud to announce our partnership with STEMpedia, a globally recognized leader in STEM education. Through this collaboration, 
-                we bring a world-class AI curriculum and ensure its effective implementation in schools through engaging, project-based learning experiences.
-              </p></div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="content-4"
+            aria-labelledby="title-4">
+            <h3 class="accordion-title" id="title-4">Who is our partner?</h3>
+            <span class="accordion-icon" aria-hidden="true"><i class="fa-solid fa-caret-down"
+                aria-hidden="ture"></i></span>
+          </div>
+          <div class="accordion-content" id="content-4" tabindex="-1" role="region" aria-labelledby="title-4"
+            aria-hidden="true">
+            <div class="content-wrapper">
+              <p class="content-text">
+                We are proud to announce our partnership with STEMpedia, a globally recognized leader in STEM
+                education. Through this collaboration,
+                we bring a world-class AI curriculum and ensure its effective implementation in schools through
+                engaging, project-based learning experiences.
+              </p>
             </div>
           </div>
-          <div class="accordion-item">
-            <div class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="content-5" aria-labelledby="title-5">
-              <h3 class="accordion-title" id="title-5">What solutions do we provide for businesses?</h3> 
-               <span class="accordion-icon" aria-hidden="true"><i class="fa-solid fa-caret-down" aria-hidden="true"></i></span>
-            </div>
-            <div class="accordion-content" id="content-5" tabindex="-1" role="region" aria-labelledby="title-5" aria-hidden="true">
-             <div class="content-wrapper">    <p class="content-text">
-                Beyond education, Udayam AI Labs also develops custom AI solutions for businesses and institutions. 
-                Our expertise includes the creation of custom GPTs, AI-powered chatbots, intelligent automation tools, and domain-specific 
-                generative AI applications. These solutions are built to address unique needs, streamline processes, and enhance engagement 
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="content-5"
+            aria-labelledby="title-5">
+            <h3 class="accordion-title" id="title-5">What solutions do we provide for businesses?</h3>
+            <span class="accordion-icon" aria-hidden="true"><i class="fa-solid fa-caret-down"
+                aria-hidden="true"></i></span>
+          </div>
+          <div class="accordion-content" id="content-5" tabindex="-1" role="region" aria-labelledby="title-5"
+            aria-hidden="true">
+            <div class="content-wrapper">
+              <p class="content-text">
+                Beyond education, Udayam AI Labs also develops custom AI solutions for businesses and institutions.
+                Our expertise includes the creation of custom GPTs, AI-powered chatbots, intelligent automation
+                tools, and domain-specific
+                generative AI applications. These solutions are built to address unique needs, streamline processes,
+                and enhance engagement
                 across sectors.
-              </p></div>
+              </p>
             </div>
           </div>
-          <div class="accordion-item">
-            <div class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="content-6" aria-labelledby="title-6">
-              <h3 class="accordion-title" id="title-6">What drives us?</h3> 
-               <span class="accordion-icon" aria-hidden="true"><i class="fa-solid fa-caret-down" aria-hidden="true"></i></span>
-            </div>
-            <div class="accordion-content" id="content-6" role="region" aria-labelledby="title-6" aria-hidden="true">
-           <div class="content-wrapper">      <p class="content-text">
-                 Driven by a passion for technology and learning, Udayam AI Labs is your trusted partner in unlocking potential through 
-                 innovation — learning, building, and growing with AI.
-              </p></div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="content-6"
+            aria-labelledby="title-6">
+            <h3 class="accordion-title" id="title-6">What drives us?</h3>
+            <span class="accordion-icon" aria-hidden="true"><i class="fa-solid fa-caret-down"
+                aria-hidden="true"></i></span>
+          </div>
+          <div class="accordion-content" id="content-6" role="region" aria-labelledby="title-6" aria-hidden="true">
+            <div class="content-wrapper">
+              <p class="content-text">
+                Driven by a passion for technology and learning, Udayam AI Labs is your trusted partner in unlocking
+                potential through
+                innovation — learning, building, and growing with AI.
+              </p>
             </div>
           </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Meet Our Team Section -->
   <section id="team" class="team">
     <div class="container">
       <h2 class="section-title">Meet Our Team</h2>
       <div class="service-underline"></div>
       <p class="section-subtitle">The talented individuals behind our success</p>
 
-      <!-- team container -->
       <div class="row horizontal-content">
-        <!-- Founder -->
         <div class="team-card">
           <div class="team-img">
             <img src="assets/images/founder.png" alt="Udayraj Patare">
@@ -253,22 +282,23 @@
           <div class="team-info">
             <h3 class="mb-0">Udayraj Patare</h3>
             <p>Founder & Managing Director</p>
-            <!-- social media icons -->
             <div class="team-social mt-3">
-              <a href="https://www.linkedin.com/in/udayraj-patare" class="me-2" target="_blank" rel="noopener noreferrer" aria-label="Udayraj Patare LinkedIn Account Link (opens in new tab)">
-                 <i class="fab fa-linkedin" aria-hidden="true"></i>
+              <a href="https://www.linkedin.com/in/udayraj-patare" class="me-2" target="_blank"
+                rel="noopener noreferrer" aria-label="Udayraj Patare LinkedIn Account Link (opens in new tab)">
+                <i class="fab fa-linkedin" aria-hidden="true"></i>
               </a>
-              <a href="https://x.com/labs_ai31105" class="me-2" target="_blank" rel="noopener noreferrer" aria-label="Udayraj Patare Twitter/X Account Link (opens in new tab)">
+              <a href="https://x.com/labs_ai31105" class="me-2" target="_blank" rel="noopener noreferrer"
+                aria-label="Udayraj Patare Twitter/X Account Link (opens in new tab)">
                 <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
               </a>
-              <a href="mailto:udayraj@udayam.co.in" target="_blank" rel="noopener noreferrer" aria-label="Udayraj Patare Email ID (opens in new tab)">
+              <a href="mailto:udayraj@udayam.co.in" target="_blank" rel="noopener noreferrer"
+                aria-label="Udayraj Patare Email ID (opens in new tab)">
                 <i class="far fa-envelope" aria-hidden="true"></i>
               </a>
             </div>
           </div>
         </div>
 
-        <!-- Co-founder -->
         <div class="team-card">
           <div class="team-img">
             <img src="assets/images/cofounder.png" alt="Sarthak Sathu">
@@ -276,21 +306,22 @@
           <div class="team-info">
             <h3 class="mb-0">Sarthak Sathu</h3>
             <p>Co-founder, MTech IISc</p>
-            <!-- social media icons -->
             <div class="team-social mt-3">
-              <a href="https://linkedin.com/in/sarthaks29" class="me-2" target="_blank" rel="noopener noreferrer" aria-label="Sarthak Sathu LinkedIn Account Link (opens in new tab)">
+              <a href="https://linkedin.com/in/sarthaks29" class="me-2" target="_blank" rel="noopener noreferrer"
+                aria-label="Sarthak Sathu LinkedIn Account Link (opens in new tab)">
                 <i class="fab fa-linkedin" aria-hidden="true"></i>
               </a>
-              <a href="https://x.com/sarthaksathu" class="me-2" target="_blank" rel="noopener noreferrer" aria-label="Sarthak Sathu Twitter/X Account Link (opens in new tab)">
+              <a href="https://x.com/sarthaksathu" class="me-2" target="_blank" rel="noopener noreferrer"
+                aria-label="Sarthak Sathu Twitter/X Account Link (opens in new tab)">
                 <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
               </a>
-              <a href="mailto:sarthaks@udayam.co.in" target="_blank" rel="noopener noreferrer" aria-label="Sarthak Sathu Email ID (opens in new tab)">
+              <a href="mailto:sarthaks@udayam.co.in" target="_blank" rel="noopener noreferrer"
+                aria-label="Sarthak Sathu Email ID (opens in new tab)">
                 <i class="far fa-envelope" aria-hidden="true"></i>
               </a>
             </div>
           </div>
         </div>
-        <!-- AI Engineer -->
         <div class="team-card">
           <div class="team-img">
             <img src="assets/images/intern1.png" alt="Pravin Raut" class="">
@@ -298,26 +329,26 @@
           <div class="team-info">
             <h3 class="mb-0">Pravin Raut</h3>
             <p>Generative AI Engineer</p>
-            <!-- social media icons-->
             <div class="team-social mt-3">
-              <a href="https://linkedin.com/in/pravinraut" class="me-2" target="_blank" rel="noopener noreferrer" aria-label="Pravin Raut LinkedIn Account Link (opens in new tab)">
+              <a href="https://linkedin.com/in/pravinraut" class="me-2" target="_blank" rel="noopener noreferrer"
+                aria-label="Pravin Raut LinkedIn Account Link (opens in new tab)">
                 <i class="fab fa-linkedin" aria-hidden="true"></i>
               </a>
-              <a href="https://x.com/labs_ai31105" class="me-2" target="_blank" rel="noopener noreferrer" aria-label="Pravin Raut Twitter/X Account Link (opens in new tab)">
+              <a href="https://x.com/labs_ai31105" class="me-2" target="_blank" rel="noopener noreferrer"
+                aria-label="Pravin Raut Twitter/X Account Link (opens in new tab)">
                 <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
               </a>
-              <a href="mailto:rautpravin989@gmail.com" class="me-2" target="_blank" rel="noopener noreferrer" aria-label="Pravin Raut Email ID (opens in new tab)">
+              <a href="mailto:rautpravin989@gmail.com" class="me-2" target="_blank" rel="noopener noreferrer"
+                aria-label="Pravin Raut Email ID (opens in new tab)">
                 <i class="far fa-envelope" aria-hidden="true"></i>
               </a>
             </div>
           </div>
         </div>
-        <!-- Add more technical experts here in the same row as needed -->
-      </div>
+        </div>
     </div>
   </section>
 
-  <!-- Our Partners Section -->
   <section id="partners" class="team">
 
     <div class="container">
@@ -327,8 +358,6 @@
       <p class="section-subtitle">Organizations we proudly collaborate with</p>
 
       <div class="row partners-contain">
-        <!-- Kaizen Engineering -->
-
         <div class="partner-card">
           <div class="partner-img">
             <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://kaizengroup.co.in/&ved=2ahUKEwjHh9W1-pePAxVWRTABHWXzOXwQFnoECCMQAQ&usg=AOvVaw0RbT-3zelbBrighxa_bpLo"
@@ -339,7 +368,6 @@
           <h2>Kaizen Engineering</h2>
         </div>
 
-        <!-- STEMPEDIA -->
         <div class="partner-card">
           <div class="partner-img">
             <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://thestempedia.com/%3Fsrsltid%3DAfmBOoqZl7SOaAIOqpOrJUIi2PHTG2orW1CXggrNZY0_0RujdS64cGLo&ved=2ahUKEwie6t3E_JePAxXLRTABHa1vBKgQFnoECAoQAQ&usg=AOvVaw1nTxDIUNlkEmdwEM2CPVkB"
@@ -354,28 +382,24 @@
     </div>
   </section>
 
-  <!-- Footer -->
+
   <footer id="contact">
-    <!-- title -->
     <h2 class="section-title">Contact Us</h2>
     <p class="section-subtitle">We'd Love to Hear From You</p>
     <div class="service-underline"></div>
-    <!-- starts footer content -->
     <div class="footer-content">
-      <!-- image -->
       <div class="footer-image">
         <img src="./assets/images/mascota.png" alt="">
       </div>
-      <!-- form contact -->
-      <form action="https://formsubmit.co/gsDuarte2024@outlook.com" class="contact-form" method="post" id="contact-form" onsubmit="showAlert(event)">
+      <form action="https://formsubmit.co/gsDuarte2024@outlook.com" class="contact-form" method="post" id="contact-form"
+        onsubmit="showAlert(event)">
         <input type="text" placeholder="Full name" name="Name" class="nameinput" required>
         <input type="email" name="Email" placeholder="yourmail@domain.com" class="emailinput" required>
-        <textarea name="Message" id="" cols="30" rows="10" placeholder="Message" class="messageinput" required></textarea>
+        <textarea name="Message" id="" cols="30" rows="10" placeholder="Message" class="messageinput"
+          required></textarea>
 
-        <!------->
-          <input type="hidden" name="_subject" value="New Message from Udayam AI Labs Website">
-          <!-- auto reponse -->
-          <input type="hidden" name="_autoresponse" value="subject:Thank you from Udayam AI Labs||Dear {{Name}},
+        <input type="hidden" name="_subject" value="New Message from Udayam AI Labs Website">
+        <input type="hidden" name="_autoresponse" value="subject:Thank you from Udayam AI Labs||Dear {{Name}},
 
           Thank you for contacting Udayam AI Labs! Your message is important to us. We'll get back to you as soon as possible.
 
@@ -386,70 +410,96 @@
           Udayam AI Labs Team
           support@udayam.co.in
           +91-8600302429">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
 
-          <!-- back home -->
-          <input type="hidden" name="_next" value="https://grace-silva.github.io/Udayam-AI-Labs.github.io/index.html#contact">
+        <input type="hidden" name="_next"
+          value="https://grace-silva.github.io/Udayam-AI-Labs.github.io/index.html#contact">
 
         <button class="cta" id="submitBtn">Send Message</button>
-   
+
       </form>
 
-      <!-- contact info and social media icons -->
-       <div class="contact-info">
-        <!-- email -->
-         <span class="footer-social">
-           <i class="fas fa-envelope"></i>
-           <a href="mailto:support@udayam.co.in" target="_blank">support@udayam.co.in</a>
-         </span>
-        <!-- phone -->
+      <div class="contact-info">
         <span class="footer-social">
-        <i class="fa-brands fa-whatsapp"></i>            
-        <a href="https://wa.me/918600302429?text=Hello%20Udayam%20AI%20Labs,%20I%20need%20information%20about..." target="_blank">+91-8600302429</a>
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:support@udayam.co.in" target="_blank">support@udayam.co.in</a>
         </span>
-       <!-- social media icons -->
+        <span class="footer-social">
+          <i class="fa-brands fa-whatsapp"></i>
+          <a href="https://wa.me/918600302429?text=Hello%20Udayam%20AI%20Labs,%20I%20need%20information%20about..."
+            target="_blank">+91-8600302429</a>
+        </span>
         <section class="footer-social">
           <span>Follow us</span>
           <ul class="social-links">
             <li>
-              <a href="https://www.facebook.com/people/Udayam-AI-labs/61574847474498" target="_blank" rel="noopener noreferrer" aria-label="Udayam AI Labs Facebook Account Link (opens in new tab)">
+              <a href="https://www.facebook.com/people/Udayam-AI-labs/61574847474498" target="_blank"
+                rel="noopener noreferrer" aria-label="Udayam AI Labs Facebook Account Link (opens in new tab)">
                 <i class="fa-brands fa-facebook" aria-hidden="true"></i>
               </a>
             </li>
             <li>
-              <a href="https://x.com/labs_ai31105" target="_blank" rel="noopener noreferrer" aria-label="Udayam AI Labs Twitter/X Account Link (opens in new tab)">
+              <a href="https://x.com/labs_ai31105" target="_blank" rel="noopener noreferrer"
+                aria-label="Udayam AI Labs Twitter/X Account Link (opens in new tab)">
                 <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/company/udayam-ai-labs" target="_blank" rel="noopener noreferrer" aria-label="Udayam AI Labs LinkedIn Account Link (opens in a new tab)">
+              <a href="https://www.linkedin.com/company/udayam-ai-labs" target="_blank" rel="noopener noreferrer"
+                aria-label="Udayam AI Labs LinkedIn Account Link (opens in a new tab)">
                 <i class="fab fa-linkedin" aria-hidden="true"></i>
               </a>
             </li>
             <li>
-              <a href="https://www.instagram.com/udayamai/?igsh=NXIwYmlnejN3dW5s#" target="_blank" rel="noopener noreferrer" aria-label="Udayam AI Labs Instagram Account Link (opens in a new tab)">
-              <i class="fab fa-instagram" aria-hidden="true"></i>
+              <a href="https://www.instagram.com/udayamai/?igsh=NXIwYmlnejN3dW5s#" target="_blank"
+                rel="noopener noreferrer" aria-label="Udayam AI Labs Instagram Account Link (opens in a new tab)">
+                <i class="fab fa-instagram" aria-hidden="true"></i>
               </a>
             </li>
           </ul>
         </section>
-       <!-- copyright -->
         <span class="footer-social">
           <a><i class="fa-regular fa-copyright"></i> 2025 Udayam AI Labs. All rights reserved</a>
         </span>
       </div>
 
     </div>
-    <!-- ends footer content-->
-  </footer>
+    </footer>
 
-  <!-- GO UP BUTTON -->
-    <button id="btnUp" class="upButton" title="Go Up">
+  <div id="chat-widget-container">
+      <button id="chat-toggle" aria-label="Open Chat Assistant">
+          <i class="fa-solid fa-comment-dots"></i>
+          <i class="fa-solid fa-times"></i>
+      </button>
+
+      <div id="chat-widget" role="dialog" aria-labelledby="chat-heading">
+          <div class="chat-header">
+              <h3 id="chat-heading">AI Assistant</h3>
+              <button id="chat-close-btn" aria-label="Close Chat">
+                  <i class="fa-solid fa-times"></i>
+              </button>
+          </div>
+          <div id="chat-messages" class="chat-messages">
+              </div>
+          <div class="chat-footer">
+              <input type="text" id="chat-input" placeholder="Type a message..." aria-label="Chat input">
+              <button id="chat-send-btn" aria-label="Send Message">
+                  <i class="fa-solid fa-paper-plane"></i>
+              </button>
+          </div>
+      </div>
+  </div>
+
+
+  <button id="btnUp" class="upButton" title="Go Up">
     <i class="fa-solid fa-angle-up" aria-hidden="true"></i>
- </button>
-  <!-- Scripts -->
- <script src="js/script.js" defer></script>
+  </button>
+  
+ 
+
+  <script src="js/script.js" defer></script>
+  <script src="js/assistant.js" defer></script>
 
 </body>
 

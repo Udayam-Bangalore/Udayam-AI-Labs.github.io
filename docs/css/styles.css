@@ -46,10 +46,14 @@ html{
   border-radius: 8px;
 } 
   
-/* Firefox */
+/* For Firefox */
 * {
-  scrollbar-width: thin;
-  scrollbar-color: rgb(0, 119, 238) rgba(241, 241, 241, 0.1);
+  scrollbar-width: none;
+}
+
+/* For Chrome, Safari, and other WebKit browsers */
+*::-webkit-scrollbar {
+  display: none;
 }
 
 body {
@@ -361,7 +365,7 @@ header{
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(0, 212, 160, 0.05) 0%, rgba(0, 119, 238, 0.05) 100%);
+  background: linear-gradient(135deg, rgb(68 0 212 / 5%) 0%, rgb(45 0 238 / 5%) 100%);
   z-index: -1;
   transition: all 0.5s ease;
 }
@@ -711,7 +715,7 @@ flex: 0 1 240px;
   justify-content: center;
   gap: 1rem;
   text-align: center;
-  color: #004B62;
+  color:var(--primary-color);
 }
 
 .team-info h3 {
@@ -880,7 +884,6 @@ flex: 0 1 240px;
       }
         .contact-form input::placeholder,  .contact-form textarea::placeholder{
           color: rgba(255, 255, 255, 0.4);
-          border: 1px solid rgba(255, 255, 255, .1);
         }
         .contact-form input:focus,
         .contact-form textarea:focus {
