@@ -255,42 +255,63 @@ window.addEventListener('scroll', function () {
   });
 });
 
-/* send emails */
-  
+/* starts send emails function with EmailJS: */
+// Inicialite emailJS:
+emailjs.init("9QTiwXB7EElSgyWrN");
+
 function showAlert(event) {
-    // the page won´t reload by default
-    event.preventDefault();
+  event.preventDefault(); // website will not reload
     
     const submitBtn = document.getElementById("submitBtn");
     const originalText = submitBtn.innerHTML;
     
-    // Disables the button behaviour to simulate a loading animation
-      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
-      submitBtn.disabled = true;
-      submitBtn.style.opacity="0.5";
-      submitBtn.style.pointerEvents = "none";
-      submitBtn.style.cursor = "not-allowed";
-    
-    // 
-    alert("Your message will be send.We'll get back to you as soon as possible.");
-    
-    // Send the form after 1 second
-    setTimeout(() => {
-        event.target.submit();
+      // sending animation in the submit button:
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+        submitBtn.classList.add('loading');
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = "0.5";
+        submitBtn.style.pointerEvents = "none";
+        submitBtn.style.cursor = "not-allowed";
+
+    // Send with EmailJS:
+    emailjs.sendForm('service_hyjqhbc', 'template_z994w15', event.target)
+      .then(function(response) {
+        console.log('SUCCESS!', response.status, response.text);
+        // Show alert:
+        alert("Your message will be sent. We'll get back to you as soon as possible.");
         
-        // Reset the form 
+        // Reset form
+        event.target.reset();
+        
+        // Redirect to home page
         setTimeout(() => {
-            event.target.reset();
+          window.location.href = "https://grace-silva.github.io/Udayam-AI-Labs.github.io/index.html#contact";
+        }, 1000);
+
+        return response;
+        })
+
+        .catch(function(error) {
+          console.log('FAILED...', error);
+          alert("Sorry, there was an error sending your message. Please try again.");
+        })
+        .finally(function() {
+          // Restore original styles to the button submit:
+          setTimeout(() => {
             submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
-            submitBtn.style.opacity="1";
+            submitBtn.style.opacity = "1";
             submitBtn.style.pointerEvents = "auto";
-            submitBtn.style.cursor = "allowed";
-        }, 2000);
-    }, 1500);
+            submitBtn.style.cursor = "pointer";
+            submitBtn.classList.remove("loading");
+          }, 500);
+        });
     
-    return false;
+  return false;
 }
+
+document.getElementById('contact-form').addEventListener('submit', showAlert);
+/* ends send emails function */
 
 const menuToggle = document.getElementById("menu-toggle");
   const navLinks = document.getElementById("nav-links");

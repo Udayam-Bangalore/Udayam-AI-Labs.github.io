@@ -35,6 +35,7 @@
 
 <body>
   <header>
+    <!-- Navbar -->
     <nav class="nav-container" aria-label="Main navigation">
       <div class="logo-container">
         <a href="/" class="logo-link">
@@ -56,6 +57,7 @@
       </ul>
     </nav>
   </header>
+  <!-- Hero Section -->
   <section id="hero-section" class="hero-section" aria-labelledby="hero-heading">
     <div class="hero-section-text">
       <span class="tagline">Udayam AI Labs - Empowering the NextGen with Cutting Edge Solutions</span>
@@ -65,9 +67,10 @@
     </div>
   </section>
 
+  <!-- Our Services  -->
   <section id="services" class="services">
     <div class="container">
-      <h2>Our Services</h2>
+      <h2 class="section-title">Our Services</h2>
       <div class="service-underline"></div>
       <div class="service-grid">
         <div class="service-card">
@@ -113,11 +116,12 @@
       </div>
     </div>
   </section>
-
-  <section id="gallery" class="gallery">
+  
+  <!-- Training Highlights -->
+  <section id="training-highlights" class="training-highlights">
     <div class="container">
-      <h2>Training Highlights</h2>
-      <div class="gallery-underline"></div>
+      <h2 class="section-title">Training Highlights</h2>
+      <div class="training-underline"></div>
       <div class="card-wrapper">
         <button class="card-btn" id="prevBtn" aria-label="Previous Slide"><i class="fa-solid fa-angles-left"
             aria-hidden="true"></i></button>
@@ -144,7 +148,7 @@
     </div>
   </section>
 
-
+  <!-- About section -->
   <section id="about" class="about">
     <div class="container">
       <h2>About Udayam AI Labs</h2>
@@ -155,7 +159,8 @@
             aria-labelledby="title-1">
             <h3 class="accordion-title" id="title-1">What we are?</h3>
             <span class="accordion-icon" aria-hidden="true"><i class="fa-solid fa-caret-down"
-                aria-hidden="true"></i></span>
+                aria-hidden="true"></i>
+            </span>
           </div>
           <div class="accordion-content" id="content-1" tabindex="-1" role="region" aria-labelledby="title-1"
             aria-hidden="true">
@@ -176,7 +181,8 @@
             aria-labelledby="title-2">
             <h3 class="accordion-title" id="title-2">What we do?</h3>
             <span class="accordion-icon" aria-hidden="true"><i class="fa-solid fa-caret-down"
-                aria-hidden="true"></i></span>
+                aria-hidden="true"></i>
+            </span>
           </div>
           <div class="accordion-content" id="content-2" tabindex="-1" role="region" aria-labelledby="title-2"
             aria-hidden="true">
@@ -194,7 +200,8 @@
             aria-labelledby="title-3">
             <h3 class="accordion-title" id="title-3">How do we make learning fun?</h3>
             <span class="accordion-icon" aria-hidden="true"><i class="fa-solid fa-caret-down"
-                aria-hidden="true"></i></span>
+                aria-hidden="true"></i>
+            </span>
           </div>
           <div class="accordion-content" id="content-3" tabindex="-1" role="region" aria-labelledby="title-3"
             aria-hidden="true">
@@ -214,7 +221,8 @@
             aria-labelledby="title-4">
             <h3 class="accordion-title" id="title-4">Who is our partner?</h3>
             <span class="accordion-icon" aria-hidden="true"><i class="fa-solid fa-caret-down"
-                aria-hidden="ture"></i></span>
+                aria-hidden="ture"></i>
+            </span>
           </div>
           <div class="accordion-content" id="content-4" tabindex="-1" role="region" aria-labelledby="title-4"
             aria-hidden="true">
@@ -233,7 +241,8 @@
             aria-labelledby="title-5">
             <h3 class="accordion-title" id="title-5">What solutions do we provide for businesses?</h3>
             <span class="accordion-icon" aria-hidden="true"><i class="fa-solid fa-caret-down"
-                aria-hidden="true"></i></span>
+                aria-hidden="true"></i>
+            </span>
           </div>
           <div class="accordion-content" id="content-5" tabindex="-1" role="region" aria-labelledby="title-5"
             aria-hidden="true">
@@ -254,7 +263,8 @@
             aria-labelledby="title-6">
             <h3 class="accordion-title" id="title-6">What drives us?</h3>
             <span class="accordion-icon" aria-hidden="true"><i class="fa-solid fa-caret-down"
-                aria-hidden="true"></i></span>
+                aria-hidden="true"></i>
+            </span>
           </div>
           <div class="accordion-content" id="content-6" role="region" aria-labelledby="title-6" aria-hidden="true">
             <div class="content-wrapper">
@@ -269,7 +279,7 @@
       </div>
     </div>
   </section>
-
+   <!-- Team Section -->
   <section id="team" class="team">
     <div class="container">
       <h2 class="section-title">Meet Our Team</h2>
@@ -350,11 +360,10 @@
         </div>
     </div>
   </section>
-
+  
+  <!-- Partners -->
   <section id="partners" class="team">
-
     <div class="container">
-
       <h2 class="section-title">Our Partners</h2>
       <div class="service-underline"></div>
       <p class="section-subtitle">Organizations we proudly collaborate with</p>
@@ -384,53 +393,37 @@
     </div>
   </section>
 
-
+  <!-- Footer -->
   <footer id="contact">
     <h2 class="section-title">Contact Us</h2>
-    <p class="section-subtitle">We'd Love to Hear From You</p>
     <div class="service-underline"></div>
+    <p class="section-subtitle">We'd Love to Hear From You</p>
     <div class="footer-content">
       <div class="footer-image">
         <img src="./assets/images/mascota.png" alt="">
       </div>
-      <form action="https://formsubmit.co/gsDuarte2024@outlook.com" class="contact-form" method="post" id="contact-form"
-        onsubmit="showAlert(event)">
-        <input type="text" placeholder="Full name" name="Name" class="nameinput" required>
-        <input type="email" name="Email" placeholder="yourmail@domain.com" class="emailinput" required>
-        <textarea name="Message" id="" cols="30" rows="10" placeholder="Message" class="messageinput"
-          required></textarea>
 
-        <input type="hidden" name="_subject" value="New Message from Udayam AI Labs Website">
-        <input type="hidden" name="_autoresponse" value="subject:Thank you from Udayam AI Labs||Dear {{Name}},
+      <!-- form contact -->
+      <form class="contact-form" id="contact-form">
+        <input type="text" placeholder="Full name" name="name" class="nameinput" required>
+        <input type="email" name="email" placeholder="yourmail@domain.com" class="emailinput" required>
+        <textarea name="message" id="" cols="30" rows="10" placeholder="Message" class="messageinput" required></textarea>
 
-          Thank you for contacting Udayam AI Labs! Your message is important to us. We'll get back to you as soon as possible.
-
-          Your message:
-          {{Message}}
-
-          Best regards,
-          Udayam AI Labs Team
-          support@udayam.co.in
-          +91-8600302429">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-
-        <input type="hidden" name="_next"
-          value="https://grace-silva.github.io/Udayam-AI-Labs.github.io/index.html#contact">
-
-        <button class="cta" id="submitBtn">Send Message</button>
-
+        <button class="cta" id="submitBtn" type="submit">Send Message</button>
+   
       </form>
 
-      <div class="contact-info">
-        <span class="footer-social">
-          <i class="fas fa-envelope"></i>
-          <a href="mailto:support@udayam.co.in" target="_blank">support@udayam.co.in</a>
-        </span>
-        <span class="footer-social">
-          <i class="fa-brands fa-whatsapp"></i>
-          <a href="https://wa.me/918600302429?text=Hello%20Udayam%20AI%20Labs,%20I%20need%20information%20about..."
-            target="_blank">+91-8600302429</a>
+      <!-- contact info and social media icons -->
+       <div class="contact-info">
+        <!-- email -->
+         <span class="footer-social info">
+           <i class="fas fa-envelope"></i>
+           <a href="mailto:support@udayam.co.in" target="_blank">support@udayam.co.in</a>
+         </span>
+        <!-- phone -->
+        <span class="footer-social info">
+        <i class="fa-brands fa-whatsapp"></i>            
+        <a href="https://wa.me/918600302429?text=Hello%20Udayam%20AI%20Labs,%20I%20need%20information%20about..." target="_blank">+91-8600302429</a>
         </span>
         <section class="footer-social">
           <span>Follow us</span>
@@ -493,14 +486,13 @@
       </div>
   </div>
 
-
   <button id="btnUp" class="upButton" title="Go Up">
     <i class="fa-solid fa-angle-up" aria-hidden="true"></i>
-  </button>
-  
- 
-
-  <script src="js/script.js" defer></script>
+ </button>
+  <!-- Scripts -->
+ <script src="js/script.js" defer></script>
+  <!-- email js -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script src="js/assistant.js" defer></script>
 
 </body>
