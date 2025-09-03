@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const chatMessages = document.getElementById("chat-messages");
   const chatInput = document.getElementById("chat-input");
   const chatSendBtn = document.getElementById("chat-send-btn");
+  const menuToggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
 
   const botAvatarUrl = "assets/images/favicon/favicon-96x96.png";
   let chatHistory = [];
@@ -22,11 +24,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const indicator = document.createElement("div");
     indicator.id = "typing-indicator";
     indicator.classList.add("message", "bot-message");
+
     indicator.innerHTML = `
-            <img src="${botAvatarUrl}" class="chat-avatar" alt="Bot Avatar">
-            <div class="message-content">
-                <div class="dots"><span></span><span></span><span></span></div>
-            </div>`;
+    <img src="${botAvatarUrl}" class="chat-avatar" alt="Bot Avatar">
+    <div class="message-content">
+      </div>`;
     chatMessages.appendChild(indicator);
     chatMessages.scrollTop = chatMessages.scrollHeight;
   };
@@ -39,11 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const addMessage = (sender, text) => {
     const messageElement = document.createElement("div");
     messageElement.classList.add("message", `${sender}-message`);
-
-    let contentHTML = `<div class="message-content"><p>${text.replace(
-      /\n/g,
-      "<br>"
-    )}</p></div>`;
+    let contentHTML = `<div class="message-content">${marked.parse(
+      text
+    )}</div>`;
 
     if (sender === "bot") {
       messageElement.innerHTML =
@@ -59,39 +59,90 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const handleApiCall = async (query) => {
     showTypingIndicator();
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    let botMessageElement = null;
+    let pElement = null;
+    let fullResponse = "";
+    let isFirstChunk = true;
 
     try {
-      const response = await fetch("http://localhost:3000/api/query", {
+      const response = await fetch("https://assistant-xi.vercel.app/api/query", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ query, history: chatHistory.slice(0, -1) }),
+        body: JSON.stringify({ query, history: chatHistory.slice(-6) }),
       });
 
-      console.log(query);
-      console.log(chatHistory);
-
       if (!response.ok) {
+        hideTypingIndicator();
         throw new Error(`API Error: ${response.statusText}`);
       }
 
-      const data = await response.json();
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
 
-      hideTypingIndicator();
-      addMessage("bot", data.answer);
-      chatHistory.push({ type: "ai", content: data.answer });
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        const chunk = decoder.decode(value);
+        const lines = chunk.split("\n\n");
+
+        for (const line of lines) {
+          if (line.startsWith("data: ")) {
+            if (isFirstChunk) {
+              hideTypingIndicator();
+              botMessageElement = document.createElement("div");
+              botMessageElement.classList.add("message", "bot-message");
+              botMessageElement.innerHTML = `
+                            <img src="${botAvatarUrl}" class="chat-avatar" alt="Bot Avatar">
+                            <div class="message-content"><p></p></div>`;
+              chatMessages.appendChild(botMessageElement);
+              pElement = botMessageElement.querySelector(".message-content p");
+              pElement.classList.add("typing-cursor");
+              isFirstChunk = false;
+            }
+
+            try {
+              const jsonData = line.substring(6);
+              const parsedData = JSON.parse(jsonData);
+              const { token } = parsedData;
+
+              if (token) {
+                fullResponse += token;
+                pElement.innerHTML = marked.parse(fullResponse);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+                await new Promise((resolve) => setTimeout(resolve, 15));
+              }
+            } catch (e) {}
+          }
+        }
+      }
+
+      if (fullResponse) {
+        chatHistory.push({ type: "ai", content: fullResponse });
+      }
     } catch (error) {
       console.error(error);
-      hideTypingIndicator();
       addMessage("bot", "Sorry, I encountered an error. Please try again.");
+    } finally {
+      hideTypingIndicator();
+      if (pElement) pElement.classList.remove("typing-cursor");
+      chatInput.disabled = false;
+      chatSendBtn.disabled = false;
+      document.querySelector(".chat-footer").classList.remove("disabled");
+      chatInput.focus();
     }
   };
-
   const handleSendMessage = () => {
     const userText = chatInput.value.trim();
     if (userText) {
       addMessage("user", userText);
       chatHistory.push({ type: "human", content: userText });
       chatInput.value = "";
+      chatInput.disabled = true;
+      chatSendBtn.disabled = true;
+      document.querySelector(".chat-footer").classList.add("disabled");
 
       handleApiCall(userText);
     }
@@ -115,5 +166,18 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === "Enter") handleSendMessage();
   });
 
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+    menuToggle.innerHTML = navLinks.classList.contains("active")
+      ? '<i class="fa-solid fa-xmark"></i>'
+      : '<i class="fa-solid fa-bars"></i>';
+
+    if (
+      navLinks.classList.contains("active") &&
+      chatWidget.classList.contains("show")
+    ) {
+      toggleChatVisibility();
+    }
+  });
   showWelcomeMessage();
 });
