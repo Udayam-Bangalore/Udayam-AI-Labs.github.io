@@ -21,92 +21,67 @@
     <meta property="og:url" content="https://udayam-ai-labs.github.io/" />
     <meta name="twitter:card" content="summary_large_image" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <link
+ <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
 
-    <link
-      rel="icon"
-      type="image/png"
-      href="assets/images/favicon/favicon-96x96.png"
-      sizes="96x96"
-    />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="assets/images/favicon/favicon.svg"
-    />
-    <link rel="shortcut icon" href="assets/images/favicon/favicon.ico" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="assets/images/favicon/apple-touch-icon.png"
-    />
-    <meta name="apple-mobile-web-app-title" content="Udayam AI Labs" />
-    <link rel="manifest" href="assets/images/favicon/site.webmanifest" />
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/assistant.css" />
-    <link rel="stylesheet" href="css/callback.css" />
-  </head>
+  <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="assets/images/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Udayam AI Labs" />
+  <link rel="manifest" href="assets/images/favicon/site.webmanifest" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/assistant.css" />
+ <link rel="stylesheet" href="css/callback.css" />
+</head>
 
-  <body>
-    <header>
-      <!-- Navbar -->
-      <nav class="nav-container" aria-label="Main navigation">
-        <div class="logo-container">
-          <a href="/" class="logo-link">
-            <img src="assets/images/logo.png" alt="Udayam AI Labs logo" />
-            <span class="nav-title">Udayam AI Labs</span>
-          </a>
-        </div>
-        <button
-          class="menu-toggle"
-          id="menu-toggle"
-          aria-controls="nav-links"
-          aria-expanded="false"
-          aria-label="Toggle navigation menu"
-        >
-          <i class="fa-solid fa-bars" aria-hidden="true"></i>
-        </button>
-        <ul class="nav-links" id="nav-links">
-          <li><a href="#services">Services</a></li>
-          <li><a href="#gallery">Training</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#team">Our Team</a></li>
-          <li><a href="#partners">Partners</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-    <!-- Hero Section -->
-    <section
-      id="hero-section"
-      class="hero-section"
-      aria-labelledby="hero-heading"
-    >
-      <div class="hero-section-text">
-        <span class="tagline"
-          >Udayam AI Labs - Empowering the NextGen with Cutting Edge
-          Solutions</span
-        >
-        <h2 id="hero-heading">
-          AI & Technology Education for Schools, Universities & Corporates
-        </h2>
-        <p>
-          Transform learning with cutting-edge AI, robotics, and emerging
-          technologies through comprehensive educational programs tailored for
-          every level.
-        </p>
+<body>
+  <header>
+    <!-- Navbar -->
+    <nav class="nav-container" aria-label="Main navigation">
+      <div class="logo-container">
+        <a href="index.html" class="logo-link">
+          <img src="assets/images/logo.png" alt="Udayam AI Labs logo" />
+          <span class="nav-title">Udayam AI Labs</span>
+        </a>
       </div>
-    </section>
+      <button class="menu-toggle" id="menu-toggle" aria-controls="nav-links" aria-expanded="false"
+        aria-label="Toggle navigation menu">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#">Courses</a></li>
+        <!-- empieza menú desplegable para la página about us -->
+         <li class="dropdown">
+            <a href="about.html" target="_blank" aria-expanded="false" aria-haspopup="true" class="dropdown-toggle">About Us
+                <i class="fa-solid fa-caret-down dropdown-icon"></i>
+            </a>
+                <ul class="dropdown-menu">
+                    <li><a href="about.html#team" target="_blank">Our Team</a></li>
+                    <li><a href="about.html#partners" target="_blank">Our Partners</a></li>
+                </ul>
+         </li>
+         <!-- termina menú desplegable para la página about us-->
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Hero Section -->
+  <section id="hero-section" class="hero-section" aria-labelledby="hero-heading">
+    <div class="hero-section-text">
+      <span class="tagline">Udayam AI Labs - Empowering the NextGen with Cutting Edge Solutions</span>
+      <h2 id="hero-heading">AI & Technology Education for Schools, Universities & Corporates</h2>
+      <p>Transform learning with cutting-edge AI, robotics, and emerging technologies through comprehensive
+        educational programs tailored for every level.</p>
+    </div>
+  </section>
 
     <!-- Our Services  -->
     <section id="services" class="services">
