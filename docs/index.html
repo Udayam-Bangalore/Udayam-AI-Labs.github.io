@@ -656,46 +656,28 @@
     </footer>
 
     <!-- chat widget -->
-    <div id="chat-widget-container">
-      <button
-        id="chat-toggle"
-        aria-label="Open Chat Assistant"
-        title="Open Chat Assistant"
-      >
+   <div id="chat-widget-container">
+    <button id="chat-toggle" aria-label="Open Chat Assistant" title="Open Chat Assistant">
         <i class="fa-solid fa-comment-dots"></i>
         <i class="fa-solid fa-times"></i>
-      </button>
-
-      <div id="chat-widget" role="dialog" aria-labelledby="chat-heading">
+    </button>
+    <div id="chat-widget" role="dialog" aria-labelledby="chat-heading">
         <div class="chat-header">
-          <img
-            src="./assets/images/chatbotIcon.png"
-            alt=""
-            class="chatbotImage"
-          />
-          <h3 id="chat-heading">Prabha</h3>
-          <button
-            id="chat-close-btn"
-            aria-label="Close Chat"
-            title="Close conversation"
-          >
-            <i class="fa-solid fa-times"></i>
-          </button>
+            <img src="./assets/images/chatbotIcon.png" alt="" class="chatbotImage" />
+            <h3 id="chat-heading">Prabha</h3>
+            <button id="chat-close-btn" aria-label="Close Chat" title="Close conversation">
+                <i class="fa-solid fa-times"></i>
+            </button>
         </div>
         <div id="chat-messages" class="chat-messages"></div>
         <div class="chat-footer">
-          <input
-            type="text"
-            id="chat-input"
-            placeholder="Type a message..."
-            aria-label="Chat input"
-          />
-          <button id="chat-send-btn" aria-label="Send Message">
-            <i class="fa-solid fa-paper-plane"></i>
-          </button>
+            <input type="text" id="chat-input" placeholder="Type a message..." aria-label="Chat input" />
+            <button id="chat-send-btn" aria-label="Send Message">
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
         </div>
-      </div>
     </div>
+</div>
 
     <!-- go up button -->
     <button id="btnUp" class="upButton" title="Go Up">
@@ -703,38 +685,38 @@
     </button>
 
     <!-- request callback -->
-    <button id="request-callback-btn">Request a Callback</button>
-
-      <div id="callback-modal" class="callback-modal">
-        <div class="callback-modal-content">
-          <span class="callback-close-btn">&times;</span>
-          <div class="callback-modal-header">
+   <button id="request-callback-btn">Request a Callback</button>
+<div id="callback-modal" class="callback-modal">
+    <div class="callback-modal-content">
+        <span class="callback-close-btn">&times;</span>
+        <div class="callback-modal-header">
             <i class="fas fa-phone-volume"></i>
             <h3>Request a Callback</h3>
-          </div>
-          <p class="modal-intro-text">
+        </div>
+        <p class="modal-intro-text">
             Let's connect! Leave your number and one of our specialists will call you back shortly.
-          </p>
-          <form id="callback-form">
+        </p>
+        <form id="callback-form">
             <label for="phone-number">Your Phone Number</label>
             <div class="phone-input-group">
-              <select id="country-code" name="country-code" required>
-                <option value="+91" selected>IN (+91)</option>
-                <option value="+1">US (+1)</option>
-                <option value="+44">UK (+44)</option>
-                <option value="+61">AU (+61)</option>
-                <option value="+971">AE (+971)</option>
-              </select>
-              <input type="tel" id="phone-number" name="phone-number" placeholder="Enter phone number" pattern="[0-9]{10,15}" required>
+                <select id="country-code" name="country-code" required>
+                    <option value="+91" selected>IN (+91)</option>
+                    <option value="+1">US (+1)</option>
+                    <option value="+44">UK (+44)</option>
+                    <option value="+61">AU (+61)</option>
+                    <option value="+971">AE (+971)</option>
+                </select>
+                <input type="tel" id="phone-number" name="phone-number" placeholder="Enter phone number"
+                    pattern="[0-9]{10,15}" required>
             </div>
             <button type="submit" id="callback-submit-btn">Get a Call Back</button>
-          </form>
-          <p class="callback-disclaimer">
+        </form>
+        <p class="callback-disclaimer">
             <i class="fas fa-lock"></i> Your information is safe with us.
-          </p>
-        </div>
-      </div>
-    <div id="toast">Callback requested successfully!</div>
+        </p>
+    </div>
+</div>
+<div id="toast">Callback requested successfully!</div>
     <!-- Scripts -->
 
     <!-- main js-->

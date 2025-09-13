@@ -197,3 +197,44 @@
   opacity: 1;
   bottom: 50px;
 }
+
+
+.share-details-btn {
+  align-self: flex-start;
+  margin-left: 42px; 
+  margin-top: 10px;
+  background-color: #f8f9fa;
+  border: 1px solid rgba(71, 63, 197, 0.8);
+  color: rgba(71, 63, 197, 1);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.share-details-btn:hover {
+  background-color: rgba(71, 63, 197, 1);
+  color: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes disintegrate {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5) translateY(20px);
+    filter: blur(4px);
+  }
+}
+
+.share-details-btn.disintegrate {
+  animation: disintegrate 0.5s forwards ease-in;
+}
