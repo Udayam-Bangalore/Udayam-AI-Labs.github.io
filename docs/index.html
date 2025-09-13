@@ -143,6 +143,63 @@
           </div>
         </div>
       </div>
+
+      <!-- starts download brochure section -->
+        <button class="download-btn" onclick="openModal()">Get Brochure
+          <i class="fa-solid fa-download"></i>
+        </button>
+        <!-- modal window --> 
+        <!-- dark cover -->
+        <div class="modal-overlay" id="modalOverlay">
+          <!-- modal window -->
+            <div class="modal" id="modal">
+              <!-- close window icon -->
+              <button class="close-btn" onclick="closeModal()">              
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+                
+              <div id="formContent">
+                <p class="modal-description">
+                  Please complete your details to obtain the document.
+                </p>
+                <!-- download form -->      
+                <form id="downloadForm" onsubmit="handleSubmit(event)">
+                <!-- email-->
+                  <div>
+                    <label for="email"><i class="fa-solid fa-envelope"></i>Email</label>
+                    <input type="text" id="email" name="email" placeholder="yourmail@domain.com" required>
+                    <!-- if it finds invalid parameters -->
+                    <div class="error" id="emailError"><i class="fa-solid fa-triangle-exclamation" style="margin: 0 8px;"></i>Please enter a valid email address.<i class="fa-solid fa-triangle-exclamation" style="margin: 0 8px;"></i></div>
+                  </div>
+
+                <!-- phone -->   
+                  <div>
+                    <label for="phone"><i class="fa-solid fa-phone"></i>Phone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+1 234 567 8900" required>
+                    <!-- if it finds invalid parameters -->
+                    <div class="error" id="phoneError"><i class="fa-solid fa-triangle-exclamation" style="margin: 0 8px;"></i>Please enter your phone number.<i class="fa-solid fa-triangle-exclamation" style="margin: 0 8px;"></i></div>
+                  </div> 
+                    
+                  <div class="error" id="generalError"></div>
+                        
+                  <button type="submit" class="download-btn" id="submitBtn">Send and Get Brochure</button>
+                  </form>
+              </div>
+                
+              <div id="successContent" style="display: none;">
+                <h2 class="modal-title">¡Thank You!</h2>
+
+                <p class="info-text">We have received your details and will send you the file shortly.</p>
+
+                <div class="success-message">¡Please check your inbox!<i class="fa-solid fa-inbox" style="margin: 0 8px"></i></div>
+
+                    
+                <button class="download-btn" onclick="closeModal()">Close</button>
+              </div>
+            </div>
+        </div>
+      <!-- ends download brochure section -->
+
     </section>
 
     <!-- Training Highlights -->
@@ -563,7 +620,7 @@
             required
           />
           <input
-            type="email"
+            type="text"
             name="email"
             placeholder="yourmail@domain.com"
             class="emailinput"

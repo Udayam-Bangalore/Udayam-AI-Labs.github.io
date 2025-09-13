@@ -1,6 +1,22 @@
+  /* !!important: we prevent special characters from being entered */
+  function validarSinEspeciales(textDemo) {
+    // 1. block code chars
+    if (/[<>\/\\{}[\]$#%^&*|~`]/.test(textDemo)) {
+      return false;
+    }
+    // 2. allow secure characters
+    return /^[\w\s@.,+–\-¡!¿?áéíóúÁÉÍÓÚñÑüÜàèìòùÀÈÌÒÙçÇ:;"'()¿¡\n\r\t]*$/.test(textDemo);
+  }
+  function validarTelefono(texto) {
+    // Permite solo números, espacios, guiones y paréntesis
+    const regex = /^[0-9\s\-()\+.]+$/;
+    return regex.test(texto);
+  }
+
 /*  unified code to avoid conflicts between events */
 document.addEventListener('DOMContentLoaded', function () {
-    // 1. Smooth scrolling function for navigation links
+
+    // 1. Starts Smooth scrolling function for navigation links:
     // vefiry if the element exist:
     if(document.querySelector("nav a")){
       document.querySelectorAll('nav a').forEach(anchor => {
@@ -62,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // vefiry if the element exist:
     if(document.getElementById("prevBtn") && document.getElementById("nextBtn") && document.getElementById("dotsContainer")){
     const cardData = [
-    {
+      {
       image: {
       src: "assets/images/training3.webp",
       alt: "School Trainings Img"
@@ -252,129 +268,163 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     // Ends go up function 
 
-    /* 6. Starts send emails function with EmailJS: */
-      if (document.getElementById('contact-form') && document.getElementById("submitBtn")) {
-      // Inicialite emailJS:
-      emailjs.init("r8071XjnXsbmJjqpz"); // public key
 
-      // Variables to manage the number of submission attempts for the form and a delay while checking:
-      const maxRetries = 2;
-      const delay = 1000;
+    /* 6. Starts send emails function with EmailJS(Contact Form) */
+    // verify if the element exist
+    if (document.getElementById('contact-form') && document.getElementById("submitBtn")) {
 
-      // Use the above counters to assist in debugging errors:
-      async function sendEmailWithRetry(formData, retries = maxRetries) {
-        // We initially attempted to send the form (without the user noticing):
-        try{
-          // const response = await emailjs.sendForm('service_ID', 'template_ID', form data);
-          const response = await emailjs.sendForm('service_1gtj9qj', 'template_uk7gybo', formData);
-          return response;
+    // Variables to manage the number of submission attempts for the form and a delay while checking:
+    const maxRetries = 2;
+    const delay = 1000;
+    let emailjsInitialized = false;
+
+    // Use the above counters to assist in debugging errors:
+    async function sendEmailWithRetry(formData, retries = maxRetries) {
+      // We initially attempted to send the form (without the user noticing):
+      try{
+        if(!emailjsInitialized){
+          // Inicialite emailJS:
+          emailjs.init("r8071XjnXsbmJjqpz"); // public key 
+          emailjsInitialized = true;
         }
-        // If the delivery fails, start using the retry counter (1 successful delivery + 2 additional attempts):
-        catch(error){
-          if(retries>0){
-            console.log("Reintentando envío... (${maxRetries - retries + 1} / ${maxRetries})");
-            // count 1 second before attempting another send attempt:
-            await new Promise(resolve => setTimeout(resolve, delay));
-            return sendEmailWithRetry(formData, retries - 1); 
-          }
-          //
-          throw error; // if resending attempts fail, a message is displayed to users
-        }
-        //------
+
+        // const response = await emailjs.sendForm('service_ID',  'template_ID, form data);
+        const response = await emailjs.sendForm('service_1gtj9qj', 'template_uk7gybo', formData);
+        return response;
       }
-    
-      /* send email without retries or errors */
-      async function showAlert(event) {
-
-      event.preventDefault(); // website will not reload, post method blocked
-          
-        const submitBtn = document.getElementById("submitBtn"); // cta button
-        const originalText = submitBtn.innerHTML; // cta inner text
-        const form = event.target; // get form data
-
-        // "sending" animation in the submit button:
-          submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
-          submitBtn.classList.add('loading');
-          submitBtn.disabled = true;
-          submitBtn.style.opacity = "0.5";
-          submitBtn.style.pointerEvents = "none";
-          submitBtn.style.cursor = "not-allowed";
+      // If the delivery fails, start using the retry counter (1 successful delivery + 2 additional attempts):
+      catch(error){
+        if(retries>0){
+          console.log("Reintentando envío... (${maxRetries - retries + 1} / ${maxRetries})");
+          // count 1 second before attempting another send attempt:
+          await new Promise(resolve => setTimeout(resolve, delay));
+          return sendEmailWithRetry(formData, retries - 1); 
+        }
         //
-        try{
-          const response = await sendEmailWithRetry(form); // check that there are no errors
-          console.log("success", response.status, response.text);
-          alert("Your message was sent successfully!!");
-          form.reset(); // clean all input fields
+        throw error; // if resending attempts fail, a message is displayed to users
+      }
+      //------
+    }
+  
+    /* send email without retries or errors */
+    async function showAlert(event) {
 
-          // If the email is sent successfully, redirect to the home page:
-          setTimeout(() => {
-            window.location.href = "https://udayam.co.in/index.html#contact";
-          }, 1000);
+    event.preventDefault(); // website will not reload, post method blocked
+
+    /* reject special char and charge send btn */
+      const form = event.target; // get form data
+      const submitBtn = document.getElementById("submitBtn"); // cta button
+      const originalText = submitBtn.innerHTML; // cta inner text
+      let isValid = true;
+      
+      // Validar todos los campos de texto, email y textarea
+    const inputs = form.querySelectorAll('input[type="text"],  textarea');
+      for (let Input of inputs) {
+        if (!validarSinEspeciales(Input.value)) {
+          alert(`The field "${Input.name}" contains unauthorised characters.`);
+          Input.focus();
+          isValid = false;
+          break;
         }
-        // show error messages
-        catch(error){
-          console.log("failed", error);
-          let errorMessage = "Sorry, there was an error sending your message. ";
+      }
+        // if validation fails, stop sending
+        if (!isValid) {
+            return false;
+        }
+
+
+      // "sending" animation in the submit button:
+        submitBtn.classList.add('loading');
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = "0.5";
+        submitBtn.style.pointerEvents = "none";
+        submitBtn.style.cursor = "not-allowed";
+
+        await new Promise(resolve => setTimeout(resolve, 50));
+
+      //
+      try{
+        const response = await sendEmailWithRetry(form); // check that there are no errors
+        console.log("success", response.status, response.text);
+        alert(" Your message was sent successfully!! ");
+        form.reset(); // clean all input fields
+
+        // If the email is sent successfully, redirect to the home page:
+        setTimeout(() => {
+          window.location.href = "https://udayam.co.in/index.html#contact";
+        }, 1000);
+      }
+      // show error messages
+      catch(error){
+        console.log("failed", error);
+        let errorMessage = "Sorry, there was an error sending your message. Please try again. ";
+            
+        if (error?.status === 0 || error?.toString().includes('Network')) {
+          errorMessage += " Please check your internet connection and try again.";
+        } else if (error?.status >= 500) {
+          errorMessage += " Our server is having issues. Please try again in a few minutes.";
+        } else {
+          errorMessage += " Please try again or contact us directly at support@udayam.co.in ";
+        }
+            
+        alert(errorMessage);
+      }
+      finally{
+        // Restore original styles to the button submit (in case of success or error):
+        setTimeout(() => {
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+          submitBtn.style.opacity = "1";
+          submitBtn.style.pointerEvents = "auto";
+          submitBtn.style.cursor = "pointer";
+          submitBtn.classList.remove("loading");
+        }, 500);
+      }
+
+      return false;
+    }
+
+    document.getElementById('contact-form').addEventListener('submit', showAlert);
+    }
+    /* Ends send emails function with EmailJS(Contact Form) */
+    
+    
+    // 7. starts dropdown menu support for mobile
+    // verify if the element exis
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+
+      if(dropdownToggles.length > 0){
+        dropdownToggles.forEach(toggle => {
+          toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            const dropdown = this.closest('.dropdown');
+            
+            if (window.innerWidth <= 992) {
+              dropdown.classList.toggle('active');
               
-          if (error?.status === 0 || error?.toString().includes('Network')) {
-            errorMessage += "Please check your internet connection and try again.";
-          } else if (error?.status >= 500) {
-            errorMessage += "Our server is having issues. Please try again in a few minutes.";
-          } else {
-            errorMessage += "Please try again or contact us directly at support@udayam.co.in";
+              // close another dropdown
+              document.querySelectorAll('.dropdown').forEach(other => {
+                if (other !== dropdown) other.classList.remove('active');
+              });
+            }
+          });
+        });
+
+        // close if the user touch outside
+        document.addEventListener('click', function(e) {
+          if (!e.target.closest('.dropdown')) {
+            document.querySelectorAll('.dropdown').forEach(dropdown => {
+              dropdown.classList.remove('active');
+            });
           }
-              
-          alert(errorMessage);
-        }
-        finally{
-          // Restore original styles to the button submit (in case of success or error):
-          setTimeout(() => {
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-            submitBtn.style.opacity = "1";
-            submitBtn.style.pointerEvents = "auto";
-            submitBtn.style.cursor = "pointer";
-            submitBtn.classList.remove("loading");
-          }, 500);
-        }
+        });
 
-        return false;
       }
-
-      document.getElementById('contact-form').addEventListener('submit', showAlert);
-      }
-    /* Ends send emails function */
-
-    // 7. starts dropdown menu support
-    document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
-      toggle.addEventListener('click', function(e) {
-        e.preventDefault();
-        const dropdown = this.closest('.dropdown');
-        
-        if (window.innerWidth <= 992) {
-          dropdown.classList.toggle('active');
-          
-          // close another dropdown
-          document.querySelectorAll('.dropdown').forEach(other => {
-            if (other !== dropdown) other.classList.remove('active');
-          });
-        }
-      });
-    });
-      // close if the user touch outside
-      document.addEventListener('click', function(e) {
-        if (!e.target.closest('.dropdown')) {
-          document.querySelectorAll('.dropdown').forEach(dropdown => {
-            dropdown.classList.remove('active');
-          });
-        }
-      });
-    // ends dropdown function  
+    // ends dropdown menu support for mobile 
 
 
-    /* starts partners section */
-
-    // parteners data:
+    /* 8. starts partners section */
+    // create parteners data:
     const partners = [
       { // kaizen engineers
         name: "Kaizen Engineers",
@@ -430,6 +480,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // populate elements:
     const track = document.getElementById("partnersTrack");
+    // verify if the element exist
+    if(track){
       // create logo containers
       function createLogos(e){
       return `
@@ -482,10 +534,129 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Init slider
       new PartnersSlider();
-
+    }
     /* ends partners section */
+
+
+    /* 9. starts send data and download brochure with EmailJS */
+    // verify if the element exist
+      // close modal window when the user clicks off
+      document.getElementById('modalOverlay').addEventListener('click', function(event) {
+        if (event.target === this) {
+          closeModal();
+        }
+      });
+      // close modal window with ESC
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && document.getElementById('modalOverlay').classList.contains('active')) {
+          closeModal();
+        }
+      });
+    /* ends send data and download pdf */
+
 });
 
+
+
+  /* 8. starts send data and download pdf */
+    // global functions
+    function openModal() {
+      const modalOverlay = document.getElementById('modalOverlay');
+      // verify if the element exist
+      if(modalOverlay){
+        modalOverlay.classList.add('active');
+      }
+    }
+    function closeModal() {
+      const modalOverlay = document.getElementById('modalOverlay');
+      if(modalOverlay){
+        modalOverlay.classList.remove('active');
+      }
+      resetForm();
+    }
+    function resetForm() {
+      document.getElementById('email').value = '';
+      document.getElementById('phone').value = '';
+      document.getElementById('emailError').classList.remove('active');
+      document.getElementById('phoneError').classList.remove('active');
+      document.getElementById('generalError').classList.remove('active');
+      document.getElementById('generalError').textContent = '';
+      document.getElementById('formContent').style.display = 'block';
+      document.getElementById('successContent').style.display = 'none';
+      document.getElementById('submitBtn').disabled = false;
+      document.getElementById('submitBtn').textContent = 'Enviar y descargar';
+    }
+    function handleSubmit(event) {
+    event.preventDefault();
+
+      // init emailJS
+      emailjs.init("ilcGOCulCPRqjQQDb"); 
+
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const emailError = document.getElementById('emailError');
+      const phoneError = document.getElementById('phoneError');
+      const generalError = document.getElementById('generalError');
+      const submitBtn = document.getElementById('submitBtn');
+    // errors reset
+    emailError.classList.remove('active');
+    phoneError.classList.remove('active');
+    generalError.classList.remove('active');
+    // validate
+    let isValid = true;
+    if (!email) {
+      emailError.textContent = 'Please type your email';
+      emailError.classList.add('active');
+      isValid = false;
+    } 
+      /* evitar que se ingresen caracteres especiales */
+      else if (!validarSinEspeciales(email)) {
+        emailError.textContent = 'The email address contains unauthorised characters.';
+        emailError.classList.add('active');
+        isValid = false;
+      }
+      else if (!email.includes('@')) {
+        emailError.textContent = 'Please enter a valid email';
+        emailError.classList.add('active');
+        isValid = false;
+      }
+
+    if (!phone) {
+      phoneError.textContent = 'Type your phone';
+      phoneError.classList.add('active');
+      isValid = false;
+    } 
+      /* evitar que se ingresen caracteres especiales */
+      else if (!validarTelefono(phone)) {
+        phoneError.textContent = 'This number contains unauthorised characters.';
+        phoneError.classList.add('active');
+        isValid = false;
+      }
+    if (!isValid) return;
+    // Deshabilitar botón y mostrar loading
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    // Enviar datos con EmailJS
+    const templateParams = {
+      email: email,
+      phone: phone,
+    };
+    emailjs.send('service_vetmuad', 'template_p70cppb', templateParams)
+      .then(function(response) {
+        console.log('This Email was sended sucessfully:', response);
+        // show succes message
+        document.getElementById('formContent').style.display = 'none';
+        document.getElementById('successContent').style.display = 'block';
+      }, function(error) {
+          console.error('An error has ocurred:', error);
+          generalError.textContent = 'Error while attempting to send the information. Please try again.';
+          generalError.classList.add('active');
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send and Download';
+      });
+    
+    }
+  /* ends send data and download pdf */    
 
 
 
