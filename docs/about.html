@@ -59,6 +59,7 @@
             </a>
                 <ul class="dropdown-menu">
                     <li><a href="#about-content">Meet Us</a></li>
+                    <li><a href="#ourWork">Our Work</a></li>
                     <li><a href="#team">Our Team</a></li>
                     <li><a href="#partners">Our Partners</a></li>
                 </ul>
@@ -68,7 +69,7 @@
       </ul>
     </nav>
   </header>
-  <!-- About Section -->
+  <!-- Hero/About Section -->
   <section id="hero-section" class="hero-section" aria-labelledby="hero-heading">
 
     <div class="about-content" id="about-content">
@@ -147,7 +148,7 @@
   <!-- ends download brochure modal window --> 
 
 
-  <!-- About section -->
+  <!-- About section -acordeón -->
   <section id="about" class="about">
     <div class="container">
       <h2 class="section-title">About Udayam AI Labs</h2>
@@ -278,7 +279,58 @@
       </div>
     </div>
   </section>
-   <!-- Team Section -->
+
+  <!-- starts Our Work section -->
+  <section id="ourWork" class="workSection">
+  <div class="container">
+    <h2 class="section-title">Our Work</h2>
+    <div class="service-underline"></div>
+    <p class="section-subtitle work-subtitle">Explore all our training sessions, workshops, and the impact we're making across different institutions.
+    </p>
+    <!-- starts filter --> 
+      <div class="filter">
+        <button class="filter-btn active" data-filter="all">View All</button>
+        <button class="filter-btn" data-filter="school">Schools</button>
+        <button class="filter-btn" data-filter="university">University</button>
+        <button class="filter-btn" data-filter="corporate">Corporate</button>
+      </div>
+      <!-- ends filter -->
+
+      <!-- starts gallery -->
+      <div class="gallery" id="gallery">
+        <!-- starts training cards --> 
+        <!-- ends training cards -->
+      </div>
+      <!-- ends gallery -->
+
+  </div>
+    <!-- starts our work carrousel -->
+    <div class="lightbox" id="lightbox">
+      <!-- starts content -->
+      <div class="lightbox-content">
+      <!-- close btn-->
+      <button class="lightbox-close close-btn" id="lightboxClose">&times;</button>
+        <!-- starts controls -->
+        <div class="lightbox-nav">
+          <button class="lightbox-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+          <button class="lightbox-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+        </div> 
+        <!-- ends controls --> 
+        <!-- image container --> 
+        <img id="lightboxImage" src="" alt="">
+        <!-- info -->
+        <div class="lightbox-caption">
+          <h3 id="lightboxTitle"></h3>
+          <p id="lightboxSubtitle"></p>
+        </div>
+      </div>
+      <!-- ends content -->
+    </div>  
+    <!-- ends our work carrousel -->    
+  </section>
+  <!-- ends Our Work section -->
+
+  <!-- Starts Team Section -->
   <section id="team" class="team">
     <div class="container">
       <h2 class="section-title">Meet Our Team</h2>
@@ -356,11 +408,12 @@
             </div>
           </div>
         </div>
-        </div>
+      </div>
     </div>
   </section>
+  <!-- ends team section -->
   
-  <!-- Partners -->
+  <!-- starts Partners section -->
   <section id="partners" class="team">
     <div class="container">
       <h2 class="section-title">Our Partners</h2>
@@ -376,8 +429,9 @@
       </div>
     </div>
   </section>
+  <!-- ends partners section -->
 
-  <!-- Footer -->
+  <!-- starts Footer -->
   <footer id="contact">
     <h2 class="section-title">Contact Us</h2>
     <div class="service-underline"></div>
@@ -445,6 +499,7 @@
 
     </div>
   </footer>
+  <!-- ends footer -->
 
   <!-- chat widget -->  
   <div id="chat-widget-container">
@@ -506,13 +561,15 @@
       
     <div id="toast">Callback requested successfully!</div>
 
-  <!-- btn Up -->  
+  <!-- starts btn Up -->  
   <button id="btnUp" class="upButton" title="Go Up">
     <i class="fa-solid fa-angle-up" aria-hidden="true"></i>
  </button>
+ <!-- ends btn Up-->
+
   <!-- Scripts -->
  <script src="js/script.js" defer></script>
- 
+ <!-- request callback -->
  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
  <!-- email js -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
