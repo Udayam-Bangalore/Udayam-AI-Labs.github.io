@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Udayam AI Labs</title>
@@ -65,6 +65,7 @@
             </a>
                 <ul class="dropdown-menu">
                     <li><a href="/about#about-content">Meet Us</a></li>
+                    <li><a href="/about#ourWork">Our Work</a></li>
                     <li><a href="/about#team">Our Team</a></li>
                     <li><a href="/about#interns">Our Interns</a></li>
                     <li><a href="/about#partners">Our Partners</a></li>
@@ -78,26 +79,37 @@
   <!-- Hero Section -->
   <section id="hero-section" class="hero-section" aria-labelledby="hero-heading">
     <div class="hero-section-text">
-      <span class="tagline">Udayam AI Labs - Empowering the NextGen with Cutting Edge Solutions</span>
-      <h2 id="hero-heading">AI & Technology Education for Schools, Universities & Corporates</h2>
-      <p>Transform learning with cutting-edge AI, robotics, and emerging technologies through comprehensive
-        educational programs tailored for every level.</p>
+      <!--<span class="tagline">Udayam AI Labs - Empowering the NextGen with Cutting Edge Solutions</span>-->
+      <h2 class="hero-heading">AI & Technology Services for Schools, Universities & Corporates</h2>
+      <p>
+        Transform learning with cutting-edge AI, robotics, and emerging technologies through comprehensive
+        educational programs tailored for every level.
+      </p>
+      <!-- cta -->
+      <div class="heroBtns">
+        <button class="globalBtn btnGradient">Book a Demo<i class="fa-solid fa-angle-right"></i></button>
+        <button class="globalBtn" onclick="openModal()">Download Brochure<i class="fa-solid fa-download"></i></button>
+      </div>
     </div>
   </section>
 
-  <!-- Partners -->
-  <section id="partners" class="partners">
+  <!-- starts Partners section -->
+  <section id="partners" class="team">
     <div class="container">
-      <p class="section-subtitle">
-        Organizations we proudly collaborate with
-      </p>
+      <h2 class="section-title">Our Partners</h2>
+      <div class="service-underline"></div>
+      <p class="section-subtitle">Organizations we proudly collaborate with</p>
+      
       <!-- partners logo container -->
       <div class="partners-contain">
-      <!-- track -->
-        <div class="partners-track" id="partnersTrack"></div>
+        <!-- track -->
+         <div class="partners-track" id="partnersTrack">
+
+         </div>
       </div>
     </div>
-  </section>  
+  </section>
+  <!-- ends partners section -->
 
   <!-- Upcoming Events -->
    <section class="upcoming-events">
@@ -174,10 +186,6 @@
         </div>
       </div>
 
-      <!-- starts download brochure section -->
-        <button class="download-btn" onclick="openModal()">Get Brochure
-          <i class="fa-solid fa-download"></i>
-        </button>
         <!-- modal window --> 
         <!-- dark cover -->
         <div class="modal-overlay" id="modalOverlay">
@@ -212,7 +220,7 @@
                     
                   <div class="error" id="generalError"></div>
                         
-                  <button type="submit" class="download-btn" id="submitBtn">Send and Get Brochure</button>
+                  <button type="submit" class="globalBtn btnGradient download-btn" id="submitBtn">Send and Get Brochure</button>
                   </form>
               </div>
                 
@@ -291,11 +299,15 @@
              </div>
           </div>
       </div>
+
+
+
     </section>
  
  
     <!-- Training Highlights -->
     <section id="training-highlights" class="training-highlights">
+      
       <div class="container">
         <h2 class="section-title">Training Highlights</h2>
         <div class="service-underline"></div>
@@ -323,13 +335,18 @@
             <i class="fa-solid fa-angles-right" aria-hidden="true"></i>
           </button>
         </div>
-        <div
-          class="dots"
-          id="dotsContainer"
-          aria-label="Slide indicators"
-        ></div>
+
+        <div class="dots" id="dotsContainer" aria-label="Slide indicators"></div> 
+
       </div>
+        <!-- cta -->
+        <p class="section-subtitle" style="margin-bottom: 0;">Discover more transformative training experiences</p>
+        <a href="/about#ourWork">
+          <button class="globalBtn">View All Trainings<i class="fa-regular fa-images"></i></button>
+        </a>
+
     </section>
+
 
     <!-- About section -->
     <section id="about" class="about">
@@ -806,12 +823,14 @@
             </button>
         </div>
     </div>
-</div>
+  </div>
 
     <!-- go up button -->
     <button id="btnUp" class="upButton" title="Go Up">
       <i class="fa-solid fa-angle-up" aria-hidden="true"></i>
     </button>
+
+
 
     <!-- request callback -->
    <button id="request-callback-btn">Request a Callback</button>
@@ -858,5 +877,5 @@
       <script src="js/assistant.js" defer></script>
     <!-- callback request -->
       <script src="js/callback.js" defer></script>
-  </body>
+</body>
 </html>
