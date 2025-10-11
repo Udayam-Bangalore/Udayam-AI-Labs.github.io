@@ -6,20 +6,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const chatMessages = document.getElementById("chat-messages");
   const chatInput = document.getElementById("chat-input");
   const chatSendBtn = document.getElementById("chat-send-btn");
-  const menuToggle = document.getElementById("menu-toggle");
-  const navLinks = document.getElementById("nav-links");
+  const menuToggle = document.getElementById("menu-toggle"); // ADDED THIS BACK
   const callbackBtn = document.getElementById("request-callback-btn");
   const modal = document.getElementById("callback-modal");
   const closeBtn = document.querySelector(".callback-close-btn");
   const callbackForm = document.getElementById("callback-form");
   const heroSection = document.getElementById("hero-section");
-  const toast = document.getElementById("toast");
+  const toast = document.getElementById("toast"); // --- State & Constants ---
 
-  // --- State & Constants ---
   const botAvatarUrl = "assets/images/favicon/favicon-96x96.png";
-  let chatHistory = [];
+  let chatHistory = []; // --- Core Functions ---
 
-  // --- Core Functions ---
   const toggleChatVisibility = () => {
     chatWidget.classList.toggle("show");
     chatToggle.classList.toggle("active");
@@ -31,7 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const openCallbackModal = () => {
     if (modal) modal.style.display = "flex";
   };
-  
   const closeCallbackModal = () => {
     if (modal) modal.style.display = "none";
   };
@@ -53,23 +49,24 @@ document.addEventListener("DOMContentLoaded", () => {
   const addMessage = (sender, text) => {
     const messageElement = document.createElement("div");
     messageElement.classList.add("message", `${sender}-message`);
-    let contentHTML = `<div class="message-content">${marked.parse(text)}</div>`;
+    let contentHTML = `<div class="message-content">${marked.parse(
+      text
+    )}</div>`;
     if (sender === "bot") {
-      messageElement.innerHTML = `<img src="${botAvatarUrl}" class="chat-avatar" alt="Bot Avatar">` + contentHTML;
+      messageElement.innerHTML =
+        `<img src="${botAvatarUrl}" class="chat-avatar" alt="Bot Avatar">` +
+        contentHTML;
     } else {
       messageElement.innerHTML = contentHTML;
     }
     chatMessages.appendChild(messageElement);
     chatMessages.scrollTop = chatMessages.scrollHeight;
   };
-  
-  // --- MODIFIED: Welcome Message & Button ---
   const showWelcomeMessage = () => {
     const welcomeText = `👋 Hey there!\n\nI’m here to help you with any questions you've got. 💬\n\nIf you’d like, just share a few details with us and our team will get in touch to give you some personalized support. 🤝`;
     addMessage("bot", welcomeText);
     chatHistory.push({ type: "ai", content: welcomeText });
 
-    // Create and add the "Share my details" button
     const shareDetailsBtn = document.createElement("button");
     shareDetailsBtn.id = "share-details-btn";
     shareDetailsBtn.className = "share-details-btn";
@@ -84,14 +81,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   };
-  
-  // --- MODIFIED: Handle Sending a Message ---
   const handleSendMessage = () => {
-    // Remove the "Share my details" button with animation
     const shareDetailsBtn = document.getElementById("share-details-btn");
     if (shareDetailsBtn) {
       shareDetailsBtn.classList.add("disintegrate");
-      shareDetailsBtn.addEventListener('animationend', () => shareDetailsBtn.remove());
+      shareDetailsBtn.addEventListener("animationend", () =>
+        shareDetailsBtn.remove()
+      );
     }
 
     const userText = chatInput.value.trim();
@@ -109,18 +105,27 @@ document.addEventListener("DOMContentLoaded", () => {
   const handleApiCall = async (query) => {
     showTypingIndicator();
     chatMessages.scrollTop = chatMessages.scrollHeight;
-    let botMessageElement = null, pElement = null, fullResponse = "", isFirstChunk = true;
+    let botMessageElement = null,
+      pElement = null,
+      fullResponse = "",
+      isFirstChunk = true;
     try {
-      const response = await fetch("https://assistant-xi.vercel.app/api/query", {
-        method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ query, history: chatHistory.slice(-6) }),
-      });
+      const response = await fetch(
+        "https://assistant-xi.vercel.app/api/query",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ query, history: chatHistory.slice(-6) }),
+        }
+      );
       if (!response.ok) throw new Error(`API Error: ${response.statusText}`);
-      const reader = response.body.getReader(), decoder = new TextDecoder();
+      const reader = response.body.getReader(),
+        decoder = new TextDecoder();
       while (true) {
         const { done, value } = await reader.read();
         if (done) break;
-        const chunk = decoder.decode(value), lines = chunk.split("\n\n");
+        const chunk = decoder.decode(value),
+          lines = chunk.split("\n\n");
         for (const line of lines) {
           if (line.startsWith("data: ")) {
             if (isFirstChunk) {
@@ -134,7 +139,9 @@ document.addEventListener("DOMContentLoaded", () => {
               isFirstChunk = false;
             }
             try {
-              const jsonData = line.substring(6), parsedData = JSON.parse(jsonData), { token } = parsedData;
+              const jsonData = line.substring(6),
+                parsedData = JSON.parse(jsonData),
+                { token } = parsedData;
               if (token) {
                 fullResponse += token;
                 pElement.innerHTML = marked.parse(fullResponse);
@@ -152,67 +159,114 @@ document.addEventListener("DOMContentLoaded", () => {
     } finally {
       hideTypingIndicator();
       if (pElement) pElement.classList.remove("typing-cursor");
-      chatInput.disabled = false, chatSendBtn.disabled = false;
+      (chatInput.disabled = false), (chatSendBtn.disabled = false);
       document.querySelector(".chat-footer").classList.remove("disabled");
       chatInput.focus();
     }
   };
 
-  async function sendEmailWithRetry(serviceID, templateID, formElement, publicKey, retries = 2) {
+  async function sendEmailWithRetry(
+    serviceID,
+    templateID,
+    formElement,
+    publicKey,
+    retries = 2
+  ) {
     try {
-      return await emailjs.sendForm(serviceID, templateID, formElement, publicKey);
+      return await emailjs.sendForm(
+        serviceID,
+        templateID,
+        formElement,
+        publicKey
+      );
     } catch (error) {
       if (retries > 0) {
-        console.warn(`EmailJS send failed. Retrying... (${retries} attempts left)`);
+        console.warn(
+          `EmailJS send failed. Retrying... (${retries} attempts left)`
+        );
         await new Promise((resolve) => setTimeout(resolve, 1000));
-        return sendEmailWithRetry(serviceID, templateID, formElement, publicKey, retries - 1);
+        return sendEmailWithRetry(
+          serviceID,
+          templateID,
+          formElement,
+          publicKey,
+          retries - 1
+        );
       }
       throw error;
     }
-  }
+  } // --- Event Listeners ---
 
-  // --- Event Listeners ---
   chatToggle.addEventListener("click", toggleChatVisibility);
   chatCloseBtn.addEventListener("click", toggleChatVisibility);
   chatSendBtn.addEventListener("click", handleSendMessage);
-  chatInput.addEventListener("keypress", (e) => { if (e.key === "Enter") handleSendMessage(); });
+  chatInput.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") handleSendMessage();
+  }); // --- ADDED THIS BLOCK BACK --- // This new version closes the chat when the nav menu opens, without breaking the icon.
 
   if (menuToggle) {
     menuToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-      menuToggle.innerHTML = navLinks.classList.contains("active") ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
-      if (navLinks.classList.contains("active") && chatWidget.classList.contains("show")) {
-        toggleChatVisibility();
-      }
+      // Use a small delay to ensure navbar.js has updated the class first
+      setTimeout(() => {
+        const navMenu = document.querySelector(".nav-menu"); // Check if the nav menu is active AND the chat is shown
+        if (
+          navMenu &&
+          navMenu.classList.contains("active") &&
+          chatWidget.classList.contains("show")
+        ) {
+          toggleChatVisibility(); // If so, close the chat
+        }
+      }, 0);
     });
-  }
+  } // Callback Modal Listeners
 
-  // Callback Modal Listeners
-  if (callbackBtn && modal && closeBtn && callbackForm && heroSection && toast) {
+  if (
+    callbackBtn &&
+    modal &&
+    closeBtn &&
+    callbackForm &&
+    heroSection &&
+    toast
+  ) {
     callbackBtn.onclick = openCallbackModal;
     closeBtn.onclick = closeCallbackModal;
-    window.onclick = (event) => { if (event.target == modal) closeCallbackModal(); };
-    window.addEventListener("scroll", () => { if (heroSection) callbackBtn.classList.toggle("show", window.scrollY > heroSection.offsetHeight); });
+    window.onclick = (event) => {
+      if (event.target == modal) closeCallbackModal();
+    };
+    window.addEventListener("scroll", () => {
+      if (heroSection)
+        callbackBtn.classList.toggle(
+          "show",
+          window.scrollY > heroSection.offsetHeight
+        );
+    });
     callbackForm.addEventListener("submit", async (event) => {
       event.preventDefault();
-      const submitBtn = document.getElementById("callback-submit-btn"), originalText = submitBtn.innerHTML;
-      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...', submitBtn.disabled = true;
+      const submitBtn = document.getElementById("callback-submit-btn"),
+        originalText = submitBtn.innerHTML;
+      (submitBtn.innerHTML =
+        '<i class="fas fa-spinner fa-spin"></i> Sending...'),
+        (submitBtn.disabled = true);
       try {
-        await sendEmailWithRetry("service_be02eae", "template_lpeyq9q", callbackForm, "aiyuFrLrbhA3x5BuI");
+        await sendEmailWithRetry(
+          "service_be02eae",
+          "template_lpeyq9q",
+          callbackForm,
+          "aiyuFrLrbhA3x5BuI"
+        );
         closeCallbackModal();
-        toast.classList.add("show"), setTimeout(() => toast.classList.remove("show"), 3000);
+        toast.classList.add("show"),
+          setTimeout(() => toast.classList.remove("show"), 3000);
         callbackForm.reset();
       } catch (error) {
         console.error("Callback form submission failed:", error);
         alert("Sorry, there was an error submitting your request.");
       } finally {
-        submitBtn.innerHTML = originalText, submitBtn.disabled = false;
+        (submitBtn.innerHTML = originalText), (submitBtn.disabled = false);
       }
     });
   } else {
     console.error("One or more callback feature elements were not found.");
   }
-  
-  // --- Initial Call ---
   showWelcomeMessage();
 });

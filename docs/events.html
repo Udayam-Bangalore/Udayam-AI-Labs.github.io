@@ -1,193 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Udayam AI Labs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta
+      name="description"
+      content="Udayam AI Labs provides AI education, training, and custom AI solutions for schools, universities, corporations, and businesses."
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Udayam AI Labs</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <meta name="description"
-    content="Udayam AI Labs provides AI education, training, and custom AI solutions for schools, universities, corporations, and businesses." />
+    <meta property="og:title" content="Udayam AI Labs" />
+    <meta
+      property="og:description"
+      content="Learn and build with AI. Services: School AI Education, College AI Education, Corporate Training, AI Solutions Design."
+    />
+    <meta
+      property="og:image"
+      content="https://udayam-ai-labs.github.io/assets/banner.png"
+    />
+    <meta property="og:url" content="https://udayam-ai-labs.github.io/" />
+    <meta name="twitter:card" content="summary_large_image" />
 
-    
-  <meta property="og:title" content="Udayam AI Labs" />
-  <meta property="og:description"
-    content="Learn and build with AI. Services: School AI Education, College AI Education, Corporate Training, AI Solutions Design." />
-  <meta property="og:image" content="https://udayam-ai-labs.github.io/assets/banner.png" />
-  <meta property="og:url" content="https://udayam-ai-labs.github.io/" />
-  <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/images/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="assets/images/favicon/favicon.svg"
+    />
+    <link rel="shortcut icon" href="assets/images/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/favicon/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="Udayam AI Labs" />
+    <link rel="manifest" href="assets/images/favicon/site.webmanifest" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/events.css" />
+    <link rel="stylesheet" href="css/assistant.css" />
+    <link rel="stylesheet" href="css/callback.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+  </head>
 
-  <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg" />
-  <link rel="shortcut icon" href="assets/images/favicon/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png" />
-  <meta name="apple-mobile-web-app-title" content="Udayam AI Labs" />
-  <link rel="manifest" href="assets/images/favicon/site.webmanifest" />
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="css/events.css" />
-  <link rel="stylesheet" href="css/assistant.css" />
-  <link rel="stylesheet" href="css/callback.css" />
-
-</head>
-
-<body>
-  <header>
-    <!-- Navbar -->
-    <nav class="nav-container" aria-label="Main navigation">
-      <div class="logo-container">
+  <body>
+    <header id="main-header">
+      <nav class="nav-container">
         <a href="/" class="logo-link">
-          <img src="assets/images/logo.png" alt="Udayam AI Labs logo" />
+          <img
+            src="assets/images/logo.png"
+            alt="Udayam AI Labs logo"
+            class="logo-img"
+          />
           <span class="nav-title">Udayam AI Labs</span>
         </a>
+
+        <div class="nav-menu">
+          <ul class="nav-links" id="nav-links">
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/#training-modules">Courses</a></li>
+            <li><a href="/events">Events</a></li>
+            <li class="dropdown">
+              <a
+                href="#"
+                class="dropdown-toggle"
+                aria-expanded="false"
+                aria-haspopup="true"
+              >
+                About Us <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="/about#about-content"
+                    ><i class="fa-solid fa-user-group"></i> Meet Us</a
+                  >
+                </li>
+                <li>
+                  <a href="/about#ourWork"
+                    ><i class="fa-solid fa-briefcase"></i> Our Work</a
+                  >
+                </li>
+                <li>
+                  <a href="/about#team"
+                    ><i class="fa-solid fa-users"></i> Our Team</a
+                  >
+                </li>
+                <li>
+                  <a href="/about#interns"
+                    ><i class="fa-solid fa-graduation-cap"></i> Our Interns</a
+                  >
+                </li>
+                <li>
+                  <a href="/about#partners"
+                    ><i class="fa-solid fa-handshake"></i> Our Partners</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-controls="nav-links"
+          aria-expanded="false"
+          aria-label="Toggle navigation menu"
+        >
+          <svg
+            class="hamburger"
+            viewBox="0 0 32 32"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <line class="line line-top" x1="4" y1="8" x2="28" y2="8"></line>
+            <line
+              class="line line-middle"
+              x1="4"
+              y1="16"
+              x2="28"
+              y2="16"
+            ></line>
+            <line
+              class="line line-bottom"
+              x1="4"
+              y1="24"
+              x2="28"
+              y2="24"
+            ></line>
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <div class="nav-overlay" id="nav-overlay"></div>
+
+    <div class="container">
+      <div class="header">
+        <h1>Upcoming Events</h1>
+        <p>Discover AI experiences that inspire, connect, and transform.</p>
       </div>
-      <button class="menu-toggle" id="menu-toggle" aria-controls="nav-links" aria-expanded="false"
-        aria-label="Toggle navigation menu">
-        <i class="fa-solid fa-bars" aria-hidden="true"></i>
-      </button>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="/#services">Services</a></li>
-        <li><a href="/#training-modules">Courses</a></li>
-        <li><a href="/events" id="events">Events</a></li>
-         <li class="dropdown">
-            <a href="javascript:void(0);" aria-expanded="false" aria-haspopup="true" class="dropdown-toggle">About Us
-                <i class="fa-solid fa-caret-down dropdown-icon"></i>
-            </a>
-                <ul class="dropdown-menu">
-                    <li><a href="#about-content">Meet Us</a></li>
-                    <li><a href="#ourWork">Our Work</a></li>
-                    <li><a href="#team">Our Team</a></li>
-                    <li><a href="#partners">Our Partners</a></li>
-                </ul>
-         </li>
-         <!-- termina menú desplegable para la página about us-->
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-<div class="container">
-  <div class="header">
-    <h1>Upcoming Events</h1>
-    <p>Discover AI experiences that inspire, connect, and transform.</p>
-   </div>
-
-<div class="events-grid">
-    <div class="event-card">
-        <div class="event-image">
-            <img src="./assets/images/ai_for_young-innovators.png" alt="event-image"/>
+      <div class="events-grid">
+        <div class="event-card">
+          <div class="event-image">
+            <img
+              src="./assets/images/ai_for_young-innovators.png"
+              alt="event-image"
+            />
             <div class="event-date-badge">Date to be announced</div>
-        </div>
-        <div class="event-content">
+          </div>
+          <div class="event-content">
             <h3 class="event-title">AI for Young Innovators</h3>
-            <p class="event-description">An engaging program designed to introduce young learners to the fundamentals of artificial intelligence through hands-on activities, projects, and real-world examples.</p>
+            <p class="event-description">
+              An engaging program designed to introduce young learners to the
+              fundamentals of artificial intelligence through hands-on
+              activities, projects, and real-world examples.
+            </p>
             <div class="event-instructor">
-                <div class="instructor-avatar"><i class="fa-solid fa-user-tie"></i></div>
-                <div class="instructor-info">
-                    <span class="instructor-label">Instructor</span>
-                    <span class="instructor-name">To Be Announced</span>
-                </div>
+              <div class="instructor-avatar">
+                <i class="fa-solid fa-user-tie"></i>
+              </div>
+              <div class="instructor-info">
+                <span class="instructor-label">Instructor</span>
+                <span class="instructor-name">To Be Announced</span>
+              </div>
             </div>
             <div class="event-meta">
-                <div class="meta-item"><i class="fa-solid fa-location-dot"></i> To be announced</div>
-                <div class="meta-item"><i class="fa-solid fa-clock"></i> To be announced</div>
-                <button class="event-btn" data-event="AI for Young Innovators">Register Now</button>
+              <div class="meta-item">
+                <i class="fa-solid fa-location-dot"></i> To be announced
+              </div>
+              <div class="meta-item">
+                <i class="fa-solid fa-clock"></i> To be announced
+              </div>
+              <button class="event-btn" data-event="AI for Young Innovators">
+                Register Now
+              </button>
             </div>
+          </div>
         </div>
-    </div>
 
-    <div class="event-card">
-        <div class="event-image">
-            <img src="./assets/images/ai_for_educators.png" alt="event-image"/>
+        <div class="event-card">
+          <div class="event-image">
+            <img src="./assets/images/ai_for_educators.png" alt="event-image" />
             <div class="event-date-badge">Date to be announced</div>
-        </div>
-        <div class="event-content">
+          </div>
+          <div class="event-content">
             <h3 class="event-title">AI for Educators</h3>
-            <p class="event-description">A specialized training for teachers and educators to understand AI concepts, tools, and applications, empowering them to integrate AI knowledge into their teaching practices.</p>
+            <p class="event-description">
+              A specialized training for teachers and educators to understand AI
+              concepts, tools, and applications, empowering them to integrate AI
+              knowledge into their teaching practices.
+            </p>
             <div class="event-instructor">
-                <div class="instructor-avatar"><i class="fa-solid fa-user-tie"></i></div>
-                <div class="instructor-info">
-                    <span class="instructor-label">Instructor</span>
-                    <span class="instructor-name">To Be Announced</span>
-                </div>
+              <div class="instructor-avatar">
+                <i class="fa-solid fa-user-tie"></i>
+              </div>
+              <div class="instructor-info">
+                <span class="instructor-label">Instructor</span>
+                <span class="instructor-name">To Be Announced</span>
+              </div>
             </div>
             <div class="event-meta">
-                <div class="meta-item"><i class="fa-solid fa-location-dot"></i> To Be announced </div>
-                <div class="meta-item"><i class="fa-solid fa-clock"></i> To Be announced </div>
-                <button class="event-btn"  data-event="AI for Educators">Register Now</button>
+              <div class="meta-item">
+                <i class="fa-solid fa-location-dot"></i> To Be announced
+              </div>
+              <div class="meta-item">
+                <i class="fa-solid fa-clock"></i> To Be announced
+              </div>
+              <button class="event-btn" data-event="AI for Educators">
+                Register Now
+              </button>
             </div>
+          </div>
         </div>
+      </div>
+
+      <!-- Register Form -->
+      <div id="event-registration-modal" class="event-registration-modal">
+        <div class="event-registration-modal-content">
+          <span class="event-registration-close-btn">&times;</span>
+          <div class="event-registration-modal-header">
+            <i class="fas fa-user-graduate"></i>
+            <h3>Register Now</h3>
+          </div>
+          <p class="event-modal-intro-text">
+            Fill in your details below to register for your preferred event.
+          </p>
+          <form id="event-registration-form" class="event-registration-form">
+            <!-- Name -->
+            <label for="name">Full Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your name"
+              required
+            />
+
+            <!-- Email -->
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+
+            <!-- Mobile -->
+            <label for="mobile">Mobile Number</label>
+            <input
+              type="tel"
+              id="mobile"
+              name="mobile"
+              placeholder="Enter your mobile number"
+              required
+            />
+
+            <!-- Event Selection -->
+            <label for="Event">Select Event</label>
+            <select id="event" name="event" required>
+              <option value="" disabled selected>Select a Event</option>
+              <option value="AI for Young Innovators">
+                AI for Young Innovators
+              </option>
+              <option value="AI for Educators">AI for Educators</option>
+            </select>
+
+            <!-- Register Button -->
+            <button type="submit" id="event-register-submit-btn">
+              Register
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
-</div>
 
-<!-- Register Form -->
-<div id="event-registration-modal" class="event-registration-modal">
-  <div class="event-registration-modal-content">
-    <span class="event-registration-close-btn">&times;</span>
-    <div class="event-registration-modal-header">
-      <i class="fas fa-user-graduate"></i>
-      <h3>Register Now</h3>
-    </div>
-    <p class="event-modal-intro-text">
-      Fill in your details below to register for your preferred event.
-    </p>
-    <form id="event-registration-form" class="event-registration-form">
-      
-      <!-- Name -->
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="name" placeholder="Enter your name" required />
-
-      <!-- Email -->
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" placeholder="Enter your email" required />
-
-      <!-- Mobile -->
-      <label for="mobile">Mobile Number</label>
-      <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" required />
-
-      <!-- Event Selection -->
-      <label for="Event">Select Event</label>
-      <select id="event" name="event" required>
-        <option value="" disabled selected>Select a Event</option>
-        <option value="AI for Young Innovators">AI for Young Innovators</option>
-        <option value="AI for Educators">AI for Educators</option>
-      </select>
-
-      <!-- Register Button -->
-      <button type="submit" id="event-register-submit-btn">Register</button>
-    </form>
-  </div>
-</div>
-</div>
-
-<!-- Scripts -->
+    <!-- Scripts -->
 
     <!-- main js-->
     <script src="js/script.js" defer></script>
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <!-- email js -->
-      <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-      <!-- prabha code -->
-      <script src="js/assistant.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- prabha code -->
+    <script src="js/assistant.js" defer></script>
     <!-- callback request -->
-      <script src="js/callback.js" defer></script>
-   <script>
-    // Mobile menu toggle
-    const menuToggle = document.getElementById('menu-toggle');
-    const navLinks = document.getElementById('nav-links');
+    <script src="js/callback.js" defer></script>
+    <script src="js/navbar.js" defer></script>
+    <script>
+      // Mobile menu toggle
+      const menuToggle = document.getElementById("menu-toggle");
+      const navLinks = document.getElementById("nav-links");
 
-    if (menuToggle && navLinks) {
-      menuToggle.addEventListener('click', function() {
-        const isExpanded = navLinks.classList.toggle('active');
-        this.setAttribute('aria-expanded', isExpanded);
-      });
-    }     
-  </script> 
-</body>
+      if (menuToggle && navLinks) {
+        menuToggle.addEventListener("click", function () {
+          const isExpanded = navLinks.classList.toggle("active");
+          this.setAttribute("aria-expanded", isExpanded);
+        });
+      }
+    </script>
+  </body>
 </html>

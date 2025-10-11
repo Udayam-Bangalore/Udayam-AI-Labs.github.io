@@ -56,46 +56,102 @@
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/assistant.css" />
     <link rel="stylesheet" href="css/callback.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
   </head>
-
-<body>
-  <header>
-    <!-- Navbar -->
-    <nav class="nav-container" aria-label="Main navigation">
-      <div class="logo-container">
+  <body>
+    <header id="main-header">
+      <nav class="nav-container">
         <a href="/" class="logo-link">
-          <img src="assets/images/logo.png" alt="Udayam AI Labs logo" />
+          <img
+            src="assets/images/logo.png"
+            alt="Udayam AI Labs logo"
+            class="logo-img"
+          />
           <span class="nav-title">Udayam AI Labs</span>
         </a>
-      </div>
-      <button class="menu-toggle" id="menu-toggle" aria-controls="nav-links" aria-expanded="false"
-        aria-label="Toggle navigation menu">
-        <i class="fa-solid fa-bars" aria-hidden="true"></i>
-      </button>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="/#services">Services</a></li>
-        <li><a href="/#training-modules">Courses</a></li>
-        <li><a href="/events">Events</a></li>
-         <li class="dropdown">
-            <a href="javascript:void(0);" aria-expanded="false" aria-haspopup="true" class="dropdown-toggle">About Us
-                <i class="fa-solid fa-caret-down dropdown-icon"></i>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="#about-content">Meet Us</a></li>
-                    <li><a href="#ourWork">Our Work</a></li>
-              <li><a href="#team">Our Team</a></li>
-              <li><a href="#interns">Our Interns</a></li>
-              <li><a href="#partners">Our Partners</a></li>
-            </ul>
-          </li>
-          <!-- termina menú desplegable para la página about us-->
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-  </header>
 
-  <!-- Starts Hero/About Section -->
-  <section
+        <div class="nav-menu">
+          <ul class="nav-links" id="nav-links">
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/#training-modules">Courses</a></li>
+            <li><a href="/events">Events</a></li>
+            <li class="dropdown">
+              <a
+                href="#"
+                class="dropdown-toggle"
+                aria-expanded="false"
+                aria-haspopup="true"
+              >
+                About Us <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="/about#about-content"
+                    ><i class="fa-solid fa-user-group"></i> Meet Us</a
+                  >
+                </li>
+                <li>
+                  <a href="/about#ourWork"
+                    ><i class="fa-solid fa-briefcase"></i> Our Work</a
+                  >
+                </li>
+                <li>
+                  <a href="/about#team"
+                    ><i class="fa-solid fa-users"></i> Our Team</a
+                  >
+                </li>
+                <li>
+                  <a href="/about#interns"
+                    ><i class="fa-solid fa-graduation-cap"></i> Our Interns</a
+                  >
+                </li>
+                <li>
+                  <a href="/about#partners"
+                    ><i class="fa-solid fa-handshake"></i> Our Partners</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-controls="nav-links"
+          aria-expanded="false"
+          aria-label="Toggle navigation menu"
+        >
+          <svg
+            class="hamburger"
+            viewBox="0 0 32 32"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <line class="line line-top" x1="4" y1="8" x2="28" y2="8"></line>
+            <line
+              class="line line-middle"
+              x1="4"
+              y1="16"
+              x2="28"
+              y2="16"
+            ></line>
+            <line
+              class="line line-bottom"
+              x1="4"
+              y1="24"
+              x2="28"
+              y2="24"
+            ></line>
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <div class="nav-overlay" id="nav-overlay"></div>
+
+    <!-- Hero/About Section -->
+    <section
       id="hero-section"
       class="hero-section"
       aria-labelledby="hero-heading"
@@ -167,24 +223,43 @@
               </div>
             </div>
 
-        <!-- phone -->   
-        <div>
-            <label for="phone"><i class="fa-solid fa-phone"></i>Phone</label>
-            <input type="tel" id="phone" name="phone" placeholder="+1 234 567 8900" required>
-            <!-- if it finds invalid parameters -->
-            <div class="error" id="phoneError"> <i class="fa-solid fa-triangle-exclamation" style="margin: 0 8px;"></i>Please enter your telephone number.<i class="fa-solid fa-triangle-exclamation" style="margin: 0 8px;"></i></div>
-        </div> 
-                
-        <div class="error" id="generalError"></div>
-                
-        <button type="submit" class="globalBtn btnGradient download-btn" id="submitBtn">Submit</button>
+            <!-- phone -->
+            <div>
+              <label for="phone"><i class="fa-solid fa-phone"></i>Phone</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="+1 234 567 8900"
+                required
+              />
+              <!-- if it finds invalid parameters -->
+              <div class="error" id="phoneError">
+                <i
+                  class="fa-solid fa-triangle-exclamation"
+                  style="margin: 0 8px"
+                ></i
+                >Please enter your telephone number.<i
+                  class="fa-solid fa-triangle-exclamation"
+                  style="margin: 0 8px"
+                ></i>
+              </div>
+            </div>
 
-      </form>
-      
-    </div>
-              
-    <div id="successContent" style="display: none;">
-      <h2 class="modal-title">¡Thank You!</h2>
+            <div class="error" id="generalError"></div>
+
+            <button
+              type="submit"
+              class="globalBtn btnGradient download-btn"
+              id="submitBtn"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+
+        <div id="successContent" style="display: none">
+          <h2 class="modal-title">¡Thank You!</h2>
 
           <p class="info-text">
             We have received your details and will send you the file shortly.
@@ -203,219 +278,327 @@
     </div>
     <!-- ends download brochure modal window -->
 
-  <!-- About section -->
-  <section id="about" class="about">
-    <div class="container">
-      <h2 class="section-title">About Udayam AI Labs</h2>
-      <div class="service-underline"></div>
-      <div class="accordion-container">
-        <div class="accordion-item">
-          <div class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="content-1"
-            aria-labelledby="title-1">
-            <h3 class="accordion-title" id="title-1">What we are?</h3>
-            <span class="accordion-icon" aria-hidden="true"><i class="fa-solid fa-caret-down"
-                aria-hidden="true"></i>
-            </span>
-          </div>
-          <div class="accordion-content" id="content-1" tabindex="-1" role="region" aria-labelledby="title-1"
-            aria-hidden="true">
-            <div class="content-wrapper">
-              <p class="content-text">
-                At Udayam AI Labs, we are committed to empowering the next generation of thinkers, creators, and
-                innovators through cutting-edge
-                AI education and technology solutions. Founded with a vision to bridge the gap between academic
-                learning and real-world application,
-                we provide comprehensive training, resources, and expert guidance tailored for students, educators, and
-                professionals alike.
-              </p>
+    <!-- About section -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2 class="section-title">About Udayam AI Labs</h2>
+        <div class="service-underline"></div>
+        <div class="accordion-container">
+          <div class="accordion-item">
+            <div
+              class="accordion-header"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+              aria-controls="content-1"
+              aria-labelledby="title-1"
+            >
+              <h3 class="accordion-title" id="title-1">What we are?</h3>
+              <span class="accordion-icon" aria-hidden="true"
+                ><i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+              </span>
+            </div>
+            <div
+              class="accordion-content"
+              id="content-1"
+              tabindex="-1"
+              role="region"
+              aria-labelledby="title-1"
+              aria-hidden="true"
+            >
+              <div class="content-wrapper">
+                <p class="content-text">
+                  At Udayam AI Labs, we are committed to empowering the next
+                  generation of thinkers, creators, and innovators through
+                  cutting-edge AI education and technology solutions. Founded
+                  with a vision to bridge the gap between academic learning and
+                  real-world application, we provide comprehensive training,
+                  resources, and expert guidance tailored for students,
+                  educators, and professionals alike.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="accordion-item">
-          <div class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="content-2"
-            aria-labelledby="title-2">
-            <h3 class="accordion-title" id="title-2">What we do?</h3>
-            <span class="accordion-icon" aria-hidden="true"><i class="fa-solid fa-caret-down"
-                aria-hidden="true"></i>
-            </span>
-          </div>
-          <div class="accordion-content" id="content-2" tabindex="-1" role="region" aria-labelledby="title-2"
-            aria-hidden="true">
-            <div class="content-wrapper">
-              <p class="content-text">
-                Our programs are thoughtfully designed to demystify artificial intelligence, making it both
-                accessible and practical for learners at every stage. We collaborate with schools, colleges,
-                universities, and corporations to deliver impactful workshops, hands-on coding sessions, and
-                industry-aligned courses in AI and data science. </p>
+          <div class="accordion-item">
+            <div
+              class="accordion-header"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+              aria-controls="content-2"
+              aria-labelledby="title-2"
+            >
+              <h3 class="accordion-title" id="title-2">What we do?</h3>
+              <span class="accordion-icon" aria-hidden="true"
+                ><i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+              </span>
+            </div>
+            <div
+              class="accordion-content"
+              id="content-2"
+              tabindex="-1"
+              role="region"
+              aria-labelledby="title-2"
+              aria-hidden="true"
+            >
+              <div class="content-wrapper">
+                <p class="content-text">
+                  Our programs are thoughtfully designed to demystify artificial
+                  intelligence, making it both accessible and practical for
+                  learners at every stage. We collaborate with schools,
+                  colleges, universities, and corporations to deliver impactful
+                  workshops, hands-on coding sessions, and industry-aligned
+                  courses in AI and data science.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="accordion-item">
-          <div class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="content-3"
-            aria-labelledby="title-3">
-            <h3 class="accordion-title" id="title-3">How do we make learning fun?</h3>
-            <span class="accordion-icon" aria-hidden="true"><i class="fa-solid fa-caret-down"
-                aria-hidden="true"></i>
-            </span>
-          </div>
-          <div class="accordion-content" id="content-3" tabindex="-1" role="region" aria-labelledby="title-3"
-            aria-hidden="true">
-            <div class="content-wrapper">
-              <p class="content-text">
-                To make learning fun and effective, we integrate innovative tools like PictoBlox, enabling school
-                students to build essential
-                coding and logical thinking skills in an interactive environment. Our mission is to create a strong
-                foundation for future careers
-                in technology, while nurturing creativity and problem-solving abilities.
-              </p>
+          <div class="accordion-item">
+            <div
+              class="accordion-header"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+              aria-controls="content-3"
+              aria-labelledby="title-3"
+            >
+              <h3 class="accordion-title" id="title-3">
+                How do we make learning fun?
+              </h3>
+              <span class="accordion-icon" aria-hidden="true"
+                ><i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+              </span>
+            </div>
+            <div
+              class="accordion-content"
+              id="content-3"
+              tabindex="-1"
+              role="region"
+              aria-labelledby="title-3"
+              aria-hidden="true"
+            >
+              <div class="content-wrapper">
+                <p class="content-text">
+                  To make learning fun and effective, we integrate innovative
+                  tools like PictoBlox, enabling school students to build
+                  essential coding and logical thinking skills in an interactive
+                  environment. Our mission is to create a strong foundation for
+                  future careers in technology, while nurturing creativity and
+                  problem-solving abilities.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="accordion-item">
-          <div class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="content-4"
-            aria-labelledby="title-4">
-            <h3 class="accordion-title" id="title-4">Who is our partner?</h3>
-            <span class="accordion-icon" aria-hidden="true"><i class="fa-solid fa-caret-down"
-                aria-hidden="ture"></i>
-            </span>
-          </div>
-          <div class="accordion-content" id="content-4" tabindex="-1" role="region" aria-labelledby="title-4"
-            aria-hidden="true">
-            <div class="content-wrapper">
-              <p class="content-text">
-                We are proud to announce our partnership with STEMpedia, a globally recognized leader in STEM
-                education. Through this collaboration,
-                we bring a world-class AI curriculum and ensure its effective implementation in schools through
-                engaging, project-based learning experiences.
-              </p>
+          <div class="accordion-item">
+            <div
+              class="accordion-header"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+              aria-controls="content-4"
+              aria-labelledby="title-4"
+            >
+              <h3 class="accordion-title" id="title-4">Who is our partner?</h3>
+              <span class="accordion-icon" aria-hidden="true"
+                ><i class="fa-solid fa-caret-down" aria-hidden="ture"></i>
+              </span>
+            </div>
+            <div
+              class="accordion-content"
+              id="content-4"
+              tabindex="-1"
+              role="region"
+              aria-labelledby="title-4"
+              aria-hidden="true"
+            >
+              <div class="content-wrapper">
+                <p class="content-text">
+                  We are proud to announce our partnership with STEMpedia, a
+                  globally recognized leader in STEM education. Through this
+                  collaboration, we bring a world-class AI curriculum and ensure
+                  its effective implementation in schools through engaging,
+                  project-based learning experiences.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="accordion-item">
-          <div class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="content-5"
-            aria-labelledby="title-5">
-            <h3 class="accordion-title" id="title-5">What solutions do we provide for businesses?</h3>
-            <span class="accordion-icon" aria-hidden="true"><i class="fa-solid fa-caret-down"
-                aria-hidden="true"></i>
-            </span>
-          </div>
-          <div class="accordion-content" id="content-5" tabindex="-1" role="region" aria-labelledby="title-5"
-            aria-hidden="true">
-            <div class="content-wrapper">
-              <p class="content-text">
-                Beyond education, Udayam AI Labs also develops custom AI solutions for businesses and institutions.
-                Our expertise includes the creation of custom GPTs, AI-powered chatbots, intelligent automation
-                tools, and domain-specific
-                generative AI applications. These solutions are built to address unique needs, streamline processes,
-                and enhance engagement
-                across sectors.
-              </p>
+          <div class="accordion-item">
+            <div
+              class="accordion-header"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+              aria-controls="content-5"
+              aria-labelledby="title-5"
+            >
+              <h3 class="accordion-title" id="title-5">
+                What solutions do we provide for businesses?
+              </h3>
+              <span class="accordion-icon" aria-hidden="true"
+                ><i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+              </span>
+            </div>
+            <div
+              class="accordion-content"
+              id="content-5"
+              tabindex="-1"
+              role="region"
+              aria-labelledby="title-5"
+              aria-hidden="true"
+            >
+              <div class="content-wrapper">
+                <p class="content-text">
+                  Beyond education, Udayam AI Labs also develops custom AI
+                  solutions for businesses and institutions. Our expertise
+                  includes the creation of custom GPTs, AI-powered chatbots,
+                  intelligent automation tools, and domain-specific generative
+                  AI applications. These solutions are built to address unique
+                  needs, streamline processes, and enhance engagement across
+                  sectors.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="accordion-item">
-          <div class="accordion-header" role="button" tabindex="0" aria-expanded="false" aria-controls="content-6"
-            aria-labelledby="title-6">
-            <h3 class="accordion-title" id="title-6">What drives us?</h3>
-            <span class="accordion-icon" aria-hidden="true"><i class="fa-solid fa-caret-down"
-                aria-hidden="true"></i>
-            </span>
-          </div>
-          <div class="accordion-content" id="content-6" role="region" aria-labelledby="title-6" aria-hidden="true">
-            <div class="content-wrapper">
-              <p class="content-text">
-                Driven by a passion for technology and learning, Udayam AI Labs is your trusted partner in unlocking
-                potential through
-                innovation — learning, building, and growing with AI.
-              </p>
+          <div class="accordion-item">
+            <div
+              class="accordion-header"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+              aria-controls="content-6"
+              aria-labelledby="title-6"
+            >
+              <h3 class="accordion-title" id="title-6">What drives us?</h3>
+              <span class="accordion-icon" aria-hidden="true"
+                ><i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+              </span>
+            </div>
+            <div
+              class="accordion-content"
+              id="content-6"
+              role="region"
+              aria-labelledby="title-6"
+              aria-hidden="true"
+            >
+              <div class="content-wrapper">
+                <p class="content-text">
+                  Driven by a passion for technology and learning, Udayam AI
+                  Labs is your trusted partner in unlocking potential through
+                  innovation — learning, building, and growing with AI.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-   <!-- Team Section -->
+    </section>
+    <!-- Team Section -->
 
-  <!-- starts Our Work section -->
-  <section id="ourWork" class="workSection">
-  <div class="container">
-    <h2 class="section-title">Our Work</h2>
-    <div class="service-underline"></div>
-    <p class="section-subtitle work-subtitle">Explore all our training sessions, workshops, and the impact we're making across different institutions.
-    </p>
-    <!-- starts filter --> 
-      <div class="filter">
-        <button class="filter-btn active" data-filter="all">View All</button>
-        <button class="filter-btn" data-filter="school">Schools</button>
-        <button class="filter-btn" data-filter="university">University</button>
-        <button class="filter-btn" data-filter="corporate">Corporate</button>
-      </div>
-      <!-- ends filter -->
-
-      <!-- starts gallery -->
-      <div class="gallery" id="gallery">
-        <!-- starts training cards --> 
-        <!-- ends training cards -->
-      </div>
-      <!-- ends gallery -->
-
-  </div>
-    <!-- starts our work carrousel -->
-    <div class="lightbox" id="lightbox">
-      <!-- starts content -->
-      <div class="lightbox-content">
-      <!-- close btn-->
-      <button class="lightbox-close close-btn" id="lightboxClose">&times;</button>
-        <!-- starts controls -->
-        <div class="lightbox-nav">
-          <button class="lightbox-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
-          <button class="lightbox-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
-        </div> 
-        <!-- ends controls --> 
-        <!-- image container --> 
-        <img id="lightboxImage" src="" alt="">
-        <!-- info -->
-        <div class="lightbox-caption">
-          <h3 id="lightboxTitle"></h3>
-          <p id="lightboxSubtitle"></p>
+    <!-- starts Our Work section -->
+    <section id="ourWork" class="workSection">
+      <div class="container">
+        <h2 class="section-title">Our Work</h2>
+        <div class="service-underline"></div>
+        <p class="section-subtitle work-subtitle">
+          Explore all our training sessions, workshops, and the impact we're
+          making across different institutions.
+        </p>
+        <!-- starts filter -->
+        <div class="filter">
+          <button class="filter-btn active" data-filter="all">View All</button>
+          <button class="filter-btn" data-filter="school">Schools</button>
+          <button class="filter-btn" data-filter="university">
+            University
+          </button>
+          <button class="filter-btn" data-filter="corporate">Corporate</button>
         </div>
+        <!-- ends filter -->
+
+        <!-- starts gallery -->
+        <div class="gallery" id="gallery">
+          <!-- starts training cards -->
+          <!-- ends training cards -->
+        </div>
+        <!-- ends gallery -->
       </div>
-      <!-- ends content -->
-    </div>  
-    <!-- ends our work carrousel -->    
-  </section>
-  <!-- ends Our Work section -->
-
-  <!-- Starts Team Section -->
-  <section id="team" class="team">
-    <div class="container">
-      <h2 class="section-title">Meet Our Team</h2>
-      <div class="service-underline"></div>
-      <p class="section-subtitle">The talented individuals behind our success</p>
-
-      <div class="row horizontal-content">
-        <div class="team-card">
-          <div class="team-img">
-            <img src="assets/images/founder.png" alt="Udayraj Patare">
+      <!-- starts our work carrousel -->
+      <div class="lightbox" id="lightbox">
+        <!-- starts content -->
+        <div class="lightbox-content">
+          <!-- close btn-->
+          <button class="lightbox-close close-btn" id="lightboxClose">
+            &times;
+          </button>
+          <!-- starts controls -->
+          <div class="lightbox-nav">
+            <button class="lightbox-btn" id="prevBtn">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="lightbox-btn" id="nextBtn">
+              <i class="fas fa-chevron-right"></i>
+            </button>
           </div>
-          <div class="team-info">
-            <h3 class="mb-0">Udayraj Patare</h3>
-            <p>Founder & Managing Director</p>
-            <div class="team-social mt-3">
-              <a href="https://www.linkedin.com/in/udayraj-patare" class="me-2" target="_blank"
-                rel="noopener noreferrer" aria-label="Udayraj Patare LinkedIn Account Link (opens in new tab)">
-                <i class="fab fa-linkedin" aria-hidden="true"></i>
-              </a>
-              <a href="https://x.com/labs_ai31105" class="me-2" target="_blank" rel="noopener noreferrer"
-                aria-label="Udayraj Patare Twitter/X Account Link (opens in new tab)">
-                <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
-              </a>
-              <a href="mailto:udayraj@udayam.co.in" target="_blank" rel="noopener noreferrer"
-                aria-label="Udayraj Patare Email ID (opens in new tab)">
-                <i class="far fa-envelope" aria-hidden="true"></i>
-              </a>
+          <!-- ends controls -->
+          <!-- image container -->
+          <img id="lightboxImage" src="" alt="" />
+          <!-- info -->
+          <div class="lightbox-caption">
+            <h3 id="lightboxTitle"></h3>
+            <p id="lightboxSubtitle"></p>
+          </div>
+        </div>
+        <!-- ends content -->
+      </div>
+      <!-- ends our work carrousel -->
+    </section>
+    <!-- ends Our Work section -->
+
+    <!-- Starts Team Section -->
+    <section id="team" class="team">
+      <div class="container">
+        <h2 class="section-title">Meet Our Team</h2>
+        <div class="service-underline"></div>
+        <p class="section-subtitle">
+          The talented individuals behind our success
+        </p>
+
+        <div class="row horizontal-content">
+          <div class="team-card">
+            <div class="team-img">
+              <img src="assets/images/founder.png" alt="Udayraj Patare" />
             </div>
-          </div>
+            <div class="team-info">
+              <h3 class="mb-0">Udayraj Patare</h3>
+              <p>Founder & Managing Director</p>
+              <div class="team-social mt-3">
+                <a
+                  href="https://www.linkedin.com/in/udayraj-patare"
+                  class="me-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Udayraj Patare LinkedIn Account Link (opens in new tab)"
+                >
+                  <i class="fab fa-linkedin" aria-hidden="true"></i>
+                </a>
+                <a
+                  href="https://x.com/labs_ai31105"
+                  class="me-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Udayraj Patare Twitter/X Account Link (opens in new tab)"
+                >
+                  <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                </a>
+                <a
+                  href="mailto:udayraj@udayam.co.in"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Udayraj Patare Email ID (opens in new tab)"
+                >
+                  <i class="far fa-envelope" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
           </div>
           <div class="team-card">
             <div class="team-img">
@@ -486,8 +669,8 @@
                   href="https://www.linkedin.com/in/aitechtutorial/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  ><i class="fab fa-linkedin"></i
-                ></a><a href="mailto:armugamk@udayam.co.in"
+                  ><i class="fab fa-linkedin"></i></a
+                ><a href="mailto:armugamk@udayam.co.in"
                   ><i class="far fa-envelope"></i
                 ></a>
               </div>
@@ -539,10 +722,7 @@
           </div>
           <div class="team-card">
             <div class="team-img">
-              <img
-                src="./assets/images/dr_utso.jpg"
-                alt="Dr. Utso Guharoy"
-              />
+              <img src="./assets/images/dr_utso.jpg" alt="Dr. Utso Guharoy" />
             </div>
             <div class="team-info">
               <h3 class="mb-0">Dr. Utso Guharoy</h3>
@@ -610,7 +790,9 @@
                   aria-label="Shrishaila P LinkedIn"
                   ><i class="fab fa-linkedin"></i
                 ></a>
-                <a href="mailto:shrishankarnag@gmail.com" aria-label="Shrishaila P Email"
+                <a
+                  href="mailto:shrishankarnag@gmail.com"
+                  aria-label="Shrishaila P Email"
                   ><i class="far fa-envelope"></i
                 ></a>
               </div>
