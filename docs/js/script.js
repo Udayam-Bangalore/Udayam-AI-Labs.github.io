@@ -16,39 +16,6 @@
 /*  unified code to avoid conflicts between events */
 document.addEventListener('DOMContentLoaded', function () {
 
-    // 1. Starts Smooth scrolling function for navigation links:
-    // vefiry if the element exist:
-    if(document.querySelector("nav a")){
-      document.querySelectorAll('nav a').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-
-        const href = this.getAttribute('href');
-        if(!href) return;
-
-        // solo prevenir el comportamiento por defecto para los enlaces internos:
-        if(href.startsWith("#") && href != "#"){
-
-          const targetId = href;
-          const targetElement = document.querySelector(targetId);
-
-          if(targetElement){
-
-            e.preventDefault();
-
-            targetElement.scrollIntoView({
-              behavior: "smooth",
-              block: "start"
-            });
-
-            history.pushState(null, null, targetId);
-          }
-        }
-
-      });
-      });
-    }
-    // Ends Smooth scrolling function for navigation links
-
 
     // 2. Starts to Add animation classes to elements when they come into view
     // vefiry if the element exist:
@@ -471,52 +438,6 @@ document.addEventListener('DOMContentLoaded', function () {
   /*  📧📧📧 Ends send emails function with EmailJS(Contact Form + Demo Modal)  📧📧📧*/
     
     
-    // 7. starts dropdown menu support for mobile
-    // verify if the element exis
-    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-
-      if(dropdownToggles.length > 0){
-        dropdownToggles.forEach(toggle => {
-          toggle.addEventListener('click', function(e) {
-            e.preventDefault();
-            const dropdown = this.closest('.dropdown');
-            
-            if (window.innerWidth <= 992) {
-              const isActive = dropdown.classList.toggle('active');
-              this.setAttribute('aria-expanded', isActive) 
-              // close another dropdown
-              dropdownToggles.forEach(otherToggle => {
-                const otherDropDown = otherToggle.closest('.dropdown');
-                if(otherDropDown !== dropdown){
-                  otherDropDown.classList.remove('active');
-                  otherToggle.setAttribute('aria-expanded',false)
-                }
-              });
-            }
-          });
-        });
-
-        // close if the user touch outside
-        document.addEventListener('click', function(e) {
-          if (!e.target.closest('.dropdown')) {
-            dropdownToggles.forEach(toggle => {
-              const dropdownElement = toggle.closest('.dropdown')
-              dropdownElement.classList.remove('active');
-              toggle.setAttribute('aria-expanded', false)
-            });
-          }
-        });
-        // keyboard accessibility
-        dropdownToggles.forEach(toggle => {
-          toggle.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-              e.preventDefault();
-              this.click();
-            }
-          });
-        });
-      }
-    // ends dropdown menu support for mobile 
 
 
     /* 8. starts partners section */

@@ -56,43 +56,101 @@
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/assistant.css" />
     <link rel="stylesheet" href="css/callback.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
   </head>
 
 <body>
-  <header>
-    <!-- Navbar -->
-    <nav class="nav-container" aria-label="Main navigation">
-      <div class="logo-container">
+  <header id="main-header">
+      <nav class="nav-container">
         <a href="/" class="logo-link">
-          <img src="assets/images/logo.png" alt="Udayam AI Labs logo" />
+          <img
+            src="assets/images/logo.png"
+            alt="Udayam AI Labs logo"
+            class="logo-img"
+          />
           <span class="nav-title">Udayam AI Labs</span>
         </a>
-      </div>
-      <button class="menu-toggle" id="menu-toggle" aria-controls="nav-links" aria-expanded="false"
-        aria-label="Toggle navigation menu">
-        <i class="fa-solid fa-bars" aria-hidden="true"></i>
-      </button>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="/#services">Services</a></li>
-        <li><a href="/#training-modules">Courses</a></li>
-        <li><a href="/events">Events</a></li>
-         <li class="dropdown">
-            <a href="javascript:void(0);" aria-expanded="false" aria-haspopup="true" class="dropdown-toggle">About Us
-                <i class="fa-solid fa-caret-down dropdown-icon"></i>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="#about-content">Meet Us</a></li>
-                    <li><a href="#ourWork">Our Work</a></li>
-              <li><a href="#team">Our Team</a></li>
-              <li><a href="#interns">Our Interns</a></li>
-              <li><a href="#partners">Our Partners</a></li>
-            </ul>
-          </li>
-          <!-- termina menú desplegable para la página about us-->
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+
+        <div class="nav-menu">
+          <ul class="nav-links" id="nav-links">
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/#training-modules">Courses</a></li>
+            <li><a href="/events">Events</a></li>
+            <li class="dropdown">
+              <a
+                href="#"
+                class="dropdown-toggle"
+                aria-expanded="false"
+                aria-haspopup="true"
+              >
+                About Us <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="/about#about-content"
+                    ><i class="fa-solid fa-user-group"></i> Meet Us</a
+                  >
+                </li>
+                <li>
+                  <a href="/about#ourWork"
+                    ><i class="fa-solid fa-briefcase"></i> Our Work</a
+                  >
+                </li>
+                <li>
+                  <a href="/about#team"
+                    ><i class="fa-solid fa-users"></i> Our Team</a
+                  >
+                </li>
+                
+                <li>
+                  <a href="/about#interns"
+                    ><i class="fa-solid fa-graduation-cap"></i> Our Interns</a
+                  >
+                </li>
+                <li>
+                  <a href="/about#partners"
+                    ><i class="fa-solid fa-handshake"></i> Our Partners</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-controls="nav-links"
+          aria-expanded="false"
+          aria-label="Toggle navigation menu"
+        >
+          <svg
+            class="hamburger"
+            viewBox="0 0 32 32"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <line class="line line-top" x1="4" y1="8" x2="28" y2="8"></line>
+            <line
+              class="line line-middle"
+              x1="4"
+              y1="16"
+              x2="28"
+              y2="16"
+            ></line>
+            <line
+              class="line line-bottom"
+              x1="4"
+              y1="24"
+              x2="28"
+              y2="24"
+            ></line>
+          </svg>
+        </button>
       </nav>
-  </header>
+    </header>
+
+    <div class="nav-overlay" id="nav-overlay"></div>
 
   <!-- Starts Hero/About Section -->
   <section
@@ -1032,6 +1090,7 @@
   <script src="js/assistant.js" defer></script>
  <!-- callback request -->
   <script src="js/callback.js" defer></script>
+  <script src="js/navbar.js" defer></script>
 
 </body>
 
