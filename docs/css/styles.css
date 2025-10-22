@@ -1915,7 +1915,7 @@ footer {
     grid-template-rows: auto auto;
     position: relative;
     min-height: 40vh;
-    background: url("../assets/images/wave.png");
+    background: url("../assets/images/footer-wave-background.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: top center;

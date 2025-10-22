@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Udayam AI Labs</title>
+  <title>Upcoming AI Events & Workshops | Udayam AI Labs</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <meta name="description"
     content="Udayam AI Labs provides AI education, training, and custom AI solutions for schools, universities, corporations, and businesses." />
@@ -14,7 +14,7 @@
   <meta property="og:description"
     content="Learn and build with AI. Services: School AI Education, College AI Education, Corporate Training, AI Solutions Design." />
   <meta property="og:image" content="https://udayam-ai-labs.github.io/assets/banner.png" />
-  <meta property="og:url" content="https://udayam-ai-labs.github.io/" />
+  <meta property="og:url" content="https://udayam.co.in/events" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,12 +29,80 @@
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="Udayam AI Labs" />
   <link rel="manifest" href="assets/images/favicon/site.webmanifest" />
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="css/events.css" />
-  <link rel="stylesheet" href="css/assistant.css" />
+  <link rel="stylesheet" href="css/styles.min.css" />
+  <link rel="stylesheet" href="css/events.min.css" />
+  <link rel="stylesheet" href="css/assistant.min.css" />
   <!--<link rel="stylesheet" href="css/callback.css" />-->
-  <link rel="stylesheet" href="css/navbar.css" />
-
+  <link rel="stylesheet" href="css/navbar.min.css" />
+  <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Udayam AI Labs",
+        "url": "https://udayam.co.in/",
+        "logo": "https://udayam.co.in/assets/images/udayam-ai-labs-logo.png",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+91-8600302429",
+          "contactType": "customer service",
+          "email": "support@udayam.co.in"
+        },
+        "sameAs": [
+          "https://www.facebook.com/people/Udayam-AI-labs/61574847474498",
+          "https://x.com/labs_ai31105",
+          "https://www.linkedin.com/company/udayam-ai-labs",
+          "https://www.instagram.com/udayamai/?igsh=NXIwYmlnejN3dW5s#"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "AI for Young Innovators",
+        "description": "An engaging program designed to introduce young learners to the fundamentals of artificial intelligence through hands-on activities, projects, and real-world examples.",
+        "image": "https://udayam-ai-labs.github.io/assets/images/udayam-ai-for-young-innovators-event.png",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "location": {
+          "@type": "VirtualLocation"
+        },
+        "organizer": {
+          "@type": "Organization",
+          "name": "Udayam AI Labs",
+          "url": "https://udayam.co.in/"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://udayam.co.in/events",
+          "price": "0",
+          "priceCurrency": "INR",
+          "availability": "https://schema.org/InStock"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "AI for Educators",
+        "description": "A specialized training for teachers and educators to understand AI concepts, tools, and applications, empowering them to integrate AI knowledge into their teaching practices.",
+        "image": "https://udayam-ai-labs.github.io/assets/images/udayam-ai-for-educators-event.png",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "location": {
+          "@type": "VirtualLocation"
+        },
+        "organizer": {
+          "@type": "Organization",
+          "name": "Udayam AI Labs",
+          "url": "https://udayam.co.in/"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://udayam.co.in/events",
+          "price": "0",
+          "priceCurrency": "INR",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    ]
+    </script>
 </head>
 
 <body>
@@ -42,7 +110,7 @@
       <nav class="nav-container">
         <a href="/" class="logo-link">
           <img
-            src="assets/images/logo.png"
+            src="assets/images/udayam-ai-labs-logo.png"
             alt="Udayam AI Labs logo"
             class="logo-img"
           />
@@ -139,7 +207,7 @@
 <div class="events-grid">
     <div class="event-card">
         <div class="event-image">
-            <img src="./assets/images/ai_for_young-innovators.png" alt="event-image"/>
+            <img src="./assets/images/udayam-ai-for-young-innovators-event.png" alt="event-image"/>
             <div class="event-date-badge">Date to be announced</div>
         </div>
         <div class="event-content">
@@ -162,7 +230,7 @@
 
     <div class="event-card">
         <div class="event-image">
-            <img src="./assets/images/ai_for_educators.png" alt="event-image"/>
+            <img src="./assets/images/udayam-ai-for-educators-event.png" alt="event-image"/>
             <div class="event-date-badge">Date to be announced</div>
         </div>
         <div class="event-content">
@@ -227,15 +295,15 @@
 <!-- Scripts -->
 
     <!-- main js-->
-    <script src="js/script.js" defer></script>
+    <script src="js/script.min.js" defer></script>
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <!-- email js -->
       <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
       <!-- prabha code -->
-      <script src="js/assistant.js" defer></script>
+      <script src="js/assistant.min.js" defer></script>
     <!-- callback request -->
-      <script src="js/callback.js" defer></script>
+      <script src="js/callback.min.js" defer></script>
    <script>
     // Mobile menu toggle
     const menuToggle = document.getElementById('menu-toggle');
@@ -248,6 +316,6 @@
       });
     }     
   </script> 
-  <script src="js/navbar.js" defer></script>
+  <script src="js/navbar.min.js" defer></script>
 </body>
 </html>
