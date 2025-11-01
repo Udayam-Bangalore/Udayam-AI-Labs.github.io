@@ -3,6 +3,18 @@ document.addEventListener("DOMContentLoaded", () => {
   // All your gallery data in one place
   const cardData = [
     {
+      image: "./assets/images/gallery/89.jpg",
+      title: "AI in Healthcare Workshop",
+      subtitle: "ASCOMS & Hospital, Jammu",
+      category: "university",
+    },
+    {
+      image: "./assets/images/gallery/82.jpg",
+      title: "AI for Young Innovators",
+      subtitle: "Dr. Vithalrao Vikhe Patil Foundation's",
+      category: "school",
+    },
+    {
       image: "./assets/images/gallery/1.jpg",
       title: "Introduction to AI",
       subtitle: "Mahesh Munot High School",
@@ -63,12 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
       category: "university",
     },
     {
-      image: "./assets/images/gallery/82.jpg",
-      title: "AI for Young Innovators",
-      subtitle: "Dr. Vithalrao Vikhe Patil Foundation's",
-      category: "school",
-    },
-    {
       image: "./assets/images/gallery/83.jpg",
       title: "AI Bussiness Directors",
       subtitle: "MIDC, Ahilyanagar",
@@ -105,12 +111,6 @@ document.addEventListener("DOMContentLoaded", () => {
       category: "corporate",
     },
     {
-      image: "./assets/images/gallery/89.jpg",
-      title: "AI in Healthcare Workshop",
-      subtitle: "ASCOMS & Hospital, Jammu",
-      category: "corporate",
-    },
-    {
       image: "./assets/images/gallery/90.jpg",
       title: "AI for Educators",
       subtitle: "Police Public School, Bengaluru",
@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   // --- 2. ELEMENT SELECTORS ---
-  const mainTrack = document.getElementById("featured-slider-track");
+  let mainTrack = document.getElementById("featured-slider-track");
   const scrollTrack = document.getElementById("gallery-strip-track");
   const lightbox = document.getElementById("lightbox");
   const filterContainer = document.getElementById("filter-container");
@@ -196,12 +196,17 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    // 2. Populate Scrolling Strip (always shows all)
-    allData.forEach((card, index) => {
+    // --- FIX: THIS SECTION IS UPDATED ---
+    // 2. Populate Scrolling Strip (now based on filter)
+    filteredData.forEach((card) => { // <-- Changed from allData
       const smallCard = document.createElement("div");
       smallCard.className = "training-card-small";
       smallCard.dataset.category = card.category;
-      smallCard.dataset.index = index; // This index is from the *original* allData array
+      
+      // Get the original index from allData so the lightbox works
+      const originalIndex = allData.indexOf(card);
+      smallCard.dataset.index = originalIndex; // <-- Use original index
+      
       smallCard.innerHTML = `
         <img src="${card.image}" alt="${card.title}" />
         <div class="card-small-details">
@@ -210,6 +215,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>`;
       scrollTrack.appendChild(smallCard);
     });
+    // --- END FIX ---
   }
 
   // --- 6. ANIMATION & COMPONENT INITIALIZERS ---
@@ -265,28 +271,38 @@ document.addEventListener("DOMContentLoaded", () => {
   /**
    * Initializes the main featured carousel.
    */
+/**
+   * Initializes the main featured carousel.
+   */
   function initFeaturedCarousel() {
     const prevBtn = document.getElementById("featured-prev");
     const nextBtn = document.getElementById("featured-next");
 
-    // FIX: Changed 'featuredTrack' to 'mainTrack'
     if (!mainTrack || !prevBtn || !nextBtn) return;
 
-    // FIX: Changed 'featuredTrack' to 'mainTrack'
+    // --- FIX: Clone the track to remove old touch listeners causing "skipping" ---
+    // This requires `mainTrack` to be declared with `let` instead of `const`
+    const newMainTrack = mainTrack.cloneNode(true);
+    mainTrack.parentNode.replaceChild(newMainTrack, mainTrack);
+    mainTrack = newMainTrack; // Update the global reference to the new track
+    // --- END FIX ---
+
     carouselSlides = mainTrack.querySelectorAll(".slider-slide");
     carouselCurrentIndex = 0; // Reset index
     carouselSlideWidth = 0;
 
     if (carouselSlides.length > 0) {
-      // FIX: Changed 'featuredTrack' to 'mainTrack'
       carouselSlideWidth = mainTrack.parentElement.offsetWidth;
       showCarouselSlide(0);
-    } // This is a clean way to remove old listeners
+    } 
+    
+    // This is a clean way to remove old listeners
     const newPrevBtn = prevBtn.cloneNode(true);
     const newNextBtn = nextBtn.cloneNode(true);
     prevBtn.parentNode.replaceChild(newPrevBtn, prevBtn);
-    nextBtn.parentNode.replaceChild(newNextBtn, nextBtn); // Attach listeners
-
+    nextBtn.parentNode.replaceChild(newNextBtn, nextBtn); 
+    
+    // Attach listeners
     newPrevBtn.addEventListener("click", () => {
       if (!carouselSlides || carouselSlides.length <= 1) return;
       const newIndex =
@@ -303,52 +319,53 @@ document.addEventListener("DOMContentLoaded", () => {
           ? carouselCurrentIndex + 1
           : 0;
       showCarouselSlide(newIndex);
-    }); // Update on resize
+    });
 
+    // Update on resize
     let touchStartX = 0;
-  let touchEndX = 0;
-  const swipeThreshold = 50; // Min pixels user must swipe
+    let touchEndX = 0;
+    const swipeThreshold = 50; // Min pixels user must swipe
 
-  mainTrack.addEventListener(
-    "touchstart",
-    (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-    },
-    { passive: true } // Improves scrolling performance
-  );
+    // These listeners are now added to the *new* mainTrack, so they won't stack up
+    mainTrack.addEventListener(
+      "touchstart",
+      (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      },
+      { passive: true } // Improves scrolling performance
+    );
 
-  mainTrack.addEventListener("touchend", (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-  });
+    mainTrack.addEventListener("touchend", (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    });
 
-  function handleSwipe() {
-    if (carouselSlides.length <= 1) return; // Don't swipe if 1 slide
+    function handleSwipe() {
+      if (carouselSlides.length <= 1) return; // Don't swipe if 1 slide
 
-    // 1. Swiped Left (Go to Next)
-    if (touchEndX < touchStartX - swipeThreshold) {
-      const newIndex =
-        carouselCurrentIndex < carouselSlides.length - 1
-          ? carouselCurrentIndex + 1
-          : 0;
-      showCarouselSlide(newIndex);
+      // 1. Swiped Left (Go to Next)
+      if (touchEndX < touchStartX - swipeThreshold) {
+        const newIndex =
+          carouselCurrentIndex < carouselSlides.length - 1
+            ? carouselCurrentIndex + 1
+            : 0;
+        showCarouselSlide(newIndex);
+      }
+      // 2. Swiped Right (Go to Previous)
+      else if (touchEndX > touchStartX + swipeThreshold) {
+        const newIndex =
+          carouselCurrentIndex > 0
+            ? carouselCurrentIndex - 1
+            : carouselSlides.length - 1;
+        showCarouselSlide(newIndex);
+      }
+      // Reset values (for small taps that aren't swipes)
+      touchStartX = 0;
+      touchEndX = 0;
     }
-    // 2. Swiped Right (Go to Previous)
-    else if (touchEndX > touchStartX + swipeThreshold) {
-      const newIndex =
-        carouselCurrentIndex > 0
-          ? carouselCurrentIndex - 1
-          : carouselSlides.length - 1;
-      showCarouselSlide(newIndex);
-    }
-    // Reset values (for small taps that aren't swipes)
-    touchStartX = 0;
-    touchEndX = 0;
-  }
 
     window.addEventListener("resize", () => {
       if (carouselSlides.length > 0) {
-        // FIX: Changed 'featuredTrack' to 'mainTrack'
         carouselSlideWidth = mainTrack.parentElement.offsetWidth;
         showCarouselSlide(carouselCurrentIndex);
       }

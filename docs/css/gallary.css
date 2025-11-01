@@ -58,7 +58,7 @@
 .gallery-featured-slider {
   position: relative;
   width: 100%;
-  margin: 0 auto 3rem auto;
+  margin: 0 auto 1.5rem auto;
   overflow: hidden; /* This clips the slides */
 }
 
@@ -123,9 +123,8 @@
   margin: 0 auto; /* <<< ADD THIS to center the container */
   box-sizing: border-box;
   overflow: hidden;
-  padding: 2rem 0;
+  padding: 1rem 0;
   background: #f8f9fa;
-  border-top: 1px solid #e0e0e0;
   border-bottom: 1px solid #e0e0e0;
   -webkit-mask-image: linear-gradient(
     to right,
@@ -476,6 +475,27 @@
   .slider-btn.prev,
   .slider-btn.next {
     display: none;
+  }
+
+  .training-card-small {
+    width: 180px;  /* Reduced from 250px */
+    height: 120px; /* Reduced from 180px */
+    margin-right: 1rem; /* Reduced from 1.5rem for tighter spacing */
+  }
+
+  /* Make the hidden details text smaller too */
+  .card-small-details h4 {
+    font-size: 0.9rem;
+  }
+  .card-small-details p {
+    font-size: 0.8rem;
+  }
+  .slider-slide .training-card-title {
+    font-size: 1.1rem; /* Was 1.3rem */
+  }
+
+  .slider-slide .training-card-subtitle {
+    font-size: 0.9rem; /* Was 1rem */
   }
 }
 
