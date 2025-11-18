@@ -1,2 +1,27 @@
-.vscode/
-notas.md
+# --- Dependencies ---
+node_modules/
+backend/node_modules/
+package-lock.json
+yarn.lock
+
+# --- Vercel / Deployment ---
+.vercel/
+backend/.vercel/
+
+# --- Environment Variables (Crucial for security) ---
+.env.development.local
+.env.test.local
+.env.production.local
+backend/.env
+
+# --- System Files ---
+.DS_Store
+Thumbs.db
+
+# --- IDE / Editor Files ---
+.idea/
+
+# --- Build Outputs (Optional but recommended) ---
+dist/
+build/
+config.bat
