@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms & Conditions | Udayam AI Labs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="description" content="Terms and Conditions for Udayam AI Labs. Please read these terms carefully before using our services." />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    
+    <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="assets/images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Udayam AI Labs" />
+    <link rel="manifest" href="assets/images/favicon/site.webmanifest" />
+    
+    <link rel="stylesheet" href="css/min/styles.min.css" />
+    <link rel="stylesheet" href="css/min/navbar.min.css" />
+    <style>
+        :root {
+            --primary-color: #473fc5;
+            --secondary-color: #4f46e5;
+            --primary-gradient: linear-gradient(135deg, rgba(29, 146, 217, 0.85) 0%, rgba(71, 63, 197, 0.85) 71%);
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --text-dark: #1f2937;
+            --text-muted: #6b7280;
+        }
+        
+        .policy-hero {
+            background: var(--primary-gradient);
+            padding: 140px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .policy-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        
+        .policy-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .policy-hero p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .policy-hero .icon-shield {
+            font-size: 4rem;
+            color: rgba(255, 255, 255, 0.3);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .policy-container {
+            max-width: 900px;
+            margin: -40px auto 60px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .policy-card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            padding: 50px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .policy-section {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .policy-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .policy-section h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .policy-section h2 i {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-gradient);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1rem;
+        }
+        
+        .policy-section p {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+        
+        .policy-section ul {
+            margin: 15px 0;
+            padding-left: 0;
+        }
+        
+        .policy-section li {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+            list-style: none;
+        }
+        
+        .policy-section li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 8px;
+            height: 8px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+        }
+        
+        .policy-section li strong {
+            color: var(--text-dark);
+        }
+        
+        .last-updated {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .contact-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #faf5ff 100%);
+            border-radius: 16px;
+            padding: 25px;
+            margin-top: 20px;
+        }
+        
+        .contact-box p {
+            margin-bottom: 10px;
+        }
+        
+        .contact-box a {
+            color: #6366f1;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-box a:hover {
+            color: #a855f7;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-left: 4px solid #f59e0b;
+            border-radius: 0 12px 12px 0;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .highlight-box p {
+            color: #92400e;
+            margin: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .policy-hero {
+                padding: 120px 20px 60px;
+            }
+            .policy-hero h1 {
+                font-size: 2rem;
+            }
+            .policy-card {
+                padding: 30px 20px;
+                border-radius: 16px;
+            }
+            .policy-section h2 {
+                font-size: 1.25rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header id="main-header">
+        <nav class="nav-container">
+            <a href="/" class="logo-link">
+                <img src="assets/images/udayam-ai-labs-logo.png" alt="Udayam AI Labs logo" class="logo-img" />
+                <span class="nav-title">Udayam AI Labs</span>
+            </a>
+            <div class="nav-menu">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="/#services">Services</a></li>
+                    <li><a href="/#training-modules">Courses</a></li>
+                    <li><a href="/events">Events</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+                            About Us <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/about#about-content"><i class="fa-solid fa-user-group"></i> Meet Us</a></li>
+                            <li><a href="/about#ourWork"><i class="fa-solid fa-briefcase"></i> Our Work</a></li>
+                            <li><a href="/about#team"><i class="fa-solid fa-users"></i> Our Team</a></li>
+                            <li><a href="/about#interns"><i class="fa-solid fa-graduation-cap"></i> Our Interns</a></li>
+                            <li><a href="/about#partners"><i class="fa-solid fa-handshake"></i> Our Partners</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/#contact">Contact</a></li>
+                </ul>
+            </div>
+            <button class="menu-toggle" id="menu-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation menu">
+                <svg class="hamburger" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <line class="line line-top" x1="4" y1="8" x2="28" y2="8"></line>
+                    <line class="line line-middle" x1="4" y1="16" x2="28" y2="16"></line>
+                    <line class="line line-bottom" x1="4" y1="24" x2="28" y2="24"></line>
+                </svg>
+            </button>
+        </nav>
+    </header>
+    <div class="nav-overlay" id="nav-overlay"></div>
+
+    <!-- Hero Section -->
+    <section class="policy-hero">
+        <i class="fa-solid fa-file-contract icon-shield"></i>
+        <h1>Terms & Conditions</h1>
+        <p>Please read these terms carefully before using our services.</p>
+    </section>
+
+    <!-- Terms Content -->
+    <main class="policy-container">
+        <div class="policy-card">
+            <div class="policy-section">
+                <h2><i class="fa-solid fa-handshake"></i> Agreement to Terms</h2>
+                <p>Welcome to Udayam AI Labs. These Terms and Conditions ("Terms") govern your access to and use of our website <strong>udayam.co.in</strong>, our services, courses, and any related applications.</p>
+                <div class="highlight-box">
+                    <p><strong>Important:</strong> By accessing or using our services, you agree to be bound by these Terms. If you disagree with any part of the terms, you may not access our services.</p>
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <h2><i class="fa-solid fa-graduation-cap"></i> Educational Services</h2>
+                <p>Udayam AI Labs provides AI education, training programs, and technology solutions. Our services include:</p>
+                <ul>
+                    <li><strong>AI Training Courses:</strong> Online and offline courses covering artificial intelligence, machine learning, robotics, and related technologies.</li>
+                    <li><strong>Workshops:</strong> Hands-on training sessions for schools, colleges, and corporate clients.</li>
+                    <li><strong>Custom Solutions:</strong> AI-powered chatbots, automation tools, and domain-specific applications.</li>
+                    <li><strong>Consulting:</strong> Strategic guidance on AI implementation and digital transformation.</li>
+                </ul>
+                <p>We reserve the right to modify, suspend, or discontinue any service at any time with reasonable notice.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2><i class="fa-solid fa-user-check"></i> User Responsibilities</h2>
+                <p>When using our services, you agree to:</p>
+                <ul>
+                    <li>Provide accurate and complete information during registration and enrollment.</li>
+                    <li>Maintain the confidentiality of your account credentials.</li>
+                    <li>Use our services only for lawful purposes and in accordance with these Terms.</li>
+                    <li>Not share, distribute, or resell course materials without written permission.</li>
+                    <li>Respect intellectual property rights and not plagiarize course content.</li>
+                    <li>Behave professionally and respectfully during live sessions and interactions.</li>
+                    <li>Not attempt to disrupt, hack, or interfere with our website or services.</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2><i class="fa-solid fa-credit-card"></i> Payments & Refunds</h2>
+                <p>Payment terms for our courses and services:</p>
+                <ul>
+                    <li><strong>Pricing:</strong> All prices are displayed in Indian Rupees (INR) unless otherwise specified. Prices may be subject to change without prior notice.</li>
+                    <li><strong>Payment Methods:</strong> We accept payments via UPI, credit/debit cards, net banking, and other methods available through our payment partners.</li>
+                    <li><strong>Refund Policy:</strong> Refund requests must be made within 7 days of purchase if you haven't accessed more than 20% of the course content. Processing may take 7-14 business days.</li>
+                    <li><strong>No Refund:</strong> Refunds are not available for completed courses, downloadable content, or services already rendered.</li>
+                    <li><strong>Corporate Training:</strong> Custom corporate training agreements are governed by separate contracts with specific payment and cancellation terms.</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2><i class="fa-solid fa-copyright"></i> Intellectual Property</h2>
+                <p>All content on our website and in our courses is protected by intellectual property laws:</p>
+                <ul>
+                    <li><strong>Ownership:</strong> All course materials, videos, documents, graphics, logos, and software are owned by Udayam AI Labs or our licensors.</li>
+                    <li><strong>License:</strong> Upon enrollment, you receive a limited, non-transferable license to access course materials for personal, non-commercial use.</li>
+                    <li><strong>Restrictions:</strong> You may not copy, modify, distribute, sell, or create derivative works from our content without explicit permission.</li>
+                    <li><strong>Certificates:</strong> Completion certificates are for personal use and may not be falsified or misrepresented.</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2><i class="fa-solid fa-exclamation-triangle"></i> Disclaimers</h2>
+                <p>Please be aware of the following limitations:</p>
+                <ul>
+                    <li><strong>"As Is" Basis:</strong> Our services are provided "as is" without warranties of any kind, either express or implied.</li>
+                    <li><strong>No Guarantee:</strong> We do not guarantee specific outcomes, job placements, or results from completing our courses.</li>
+                    <li><strong>Technical Issues:</strong> We are not liable for temporary unavailability due to maintenance, technical issues, or circumstances beyond our control.</li>
+                    <li><strong>Third-Party Links:</strong> Our website may contain links to third-party websites. We are not responsible for their content or practices.</li>
+                    <li><strong>Accuracy:</strong> While we strive to provide accurate information, we do not warrant that all content is error-free or up-to-date.</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2><i class="fa-solid fa-scale-balanced"></i> Limitation of Liability</h2>
+                <p>To the maximum extent permitted by law:</p>
+                <ul>
+                    <li>Udayam AI Labs shall not be liable for any indirect, incidental, special, consequential, or punitive damages.</li>
+                    <li>Our total liability for any claims arising from these Terms or our services shall not exceed the amount you paid for the specific service in question.</li>
+                    <li>We are not liable for any loss of data, business interruption, or financial losses resulting from your use of our services.</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2><i class="fa-solid fa-user-slash"></i> Termination</h2>
+                <p>We reserve the right to terminate or suspend your account and access to our services:</p>
+                <ul>
+                    <li>If you violate these Terms or any applicable laws.</li>
+                    <li>If you engage in fraudulent, abusive, or harmful behavior.</li>
+                    <li>If we discontinue any service or terminate operations.</li>
+                    <li>At our sole discretion, with or without notice, for any reason.</li>
+                </ul>
+                <p>Upon termination, your right to access our services will cease immediately. Provisions that by their nature should survive termination will remain in effect.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2><i class="fa-solid fa-gavel"></i> Governing Law</h2>
+                <p>These Terms shall be governed by and construed in accordance with the laws of India. Any disputes arising from these Terms or your use of our services shall be subject to the exclusive jurisdiction of the courts in Ahmednagar, Maharashtra, India.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2><i class="fa-solid fa-rotate"></i> Changes to Terms</h2>
+                <p>We may update these Terms from time to time. Changes will be effective immediately upon posting on our website. Your continued use of our services after any changes constitutes your acceptance of the new Terms.</p>
+                <p>We encourage you to review these Terms periodically. Material changes will be communicated via email or prominent website notices.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2><i class="fa-solid fa-envelope"></i> Contact Us</h2>
+                <p>If you have any questions about these Terms & Conditions, please contact us:</p>
+                <div class="contact-box">
+                    <p><strong>Udayam AI Labs</strong></p>
+                    <p><i class="fa-solid fa-envelope"></i> Email: <a href="mailto:support@udayam.co.in">support@udayam.co.in</a></p>
+                    <p><i class="fa-brands fa-whatsapp"></i> Phone: <a href="https://wa.me/918600302429">+91-8600302429</a></p>
+                    <p><i class="fa-solid fa-globe"></i> Website: <a href="https://udayam.co.in">udayam.co.in</a></p>
+                </div>
+            </div>
+
+            <div class="last-updated">
+                <i class="fa-solid fa-calendar-check"></i> Last Updated: January 07, 2026
+            </div>
+        </div>
+    </main>
+
+    <footer id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="service-underline"></div>
+        <p class="section-subtitle">We'd Love to Hear From You</p>
+        <div class="footer-content">
+            <div class="footer-image">
+                <img src="./assets/images/udayam-ai-labs-mascot.png" alt="Udayam AI Labs Mascot" />
+            </div>
+
+            <!-- form contact -->
+            <form class="contact-form" id="contact-form">
+                <!-- important hidden fields -->
+                <input type="text" name="formName" hidden value="Contact Form" />
+                <input type="text" name="subject" hidden value="You have a new message from Udayam AI Labs Website!!" />
+                <input type="text" name="mobile" hidden value="No Required" />
+                <input type="text" name="organisation" hidden value="No Required" />
+                <!-- normal fields -->
+                <input type="text" placeholder="Full name" name="name" class="nameinput" required />
+                <input type="text" name="email" placeholder="yourmail@domain.com" class="emailinput" required />
+                <textarea name="message" cols="30" rows="10" placeholder="Message" class="messageinput" required></textarea>
+                <button class="cta" id="contactSubmitBtn" type="submit">Send Message</button>
+            </form>
+
+            <!-- contact info and social media icons -->
+            <div class="contact-info">
+                <!-- email -->
+                <span class="footer-social info">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:support@udayam.co.in" target="_blank">support@udayam.co.in</a>
+                </span>
+                <!-- phone -->
+                <span class="footer-social info">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <a href="https://wa.me/918600302429?text=Hello%20Udayam%20AI%20Labs,%20I%20need%20information%20about..." target="_blank">+91-8600302429</a>
+                </span>
+                <section class="footer-social">
+                    <span>Follow us</span>
+                    <ul class="social-links">
+                        <li>
+                            <a href="https://www.facebook.com/people/Udayam-AI-labs/61574847474498" target="_blank" rel="noopener noreferrer" aria-label="Udayam AI Labs Facebook Account Link (opens in new tab)">
+                                <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://x.com/labs_ai31105" target="_blank" rel="noopener noreferrer" aria-label="Udayam AI Labs Twitter/X Account Link (opens in new tab)">
+                                <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/company/udayam-ai-labs" target="_blank" rel="noopener noreferrer" aria-label="Udayam AI Labs LinkedIn Account Link (opens in a new tab)">
+                                <i class="fab fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/udayamai/?igsh=NXIwYmlnejN3dW5s#" target="_blank" rel="noopener noreferrer" aria-label="Udayam AI Labs Instagram Account Link (opens in a new tab)">
+                                <i class="fab fa-instagram" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+                <div class="footer-legal-links">
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    <a href="/terms-conditions">Terms & Conditions</a>
+                </div>
+                <p id="lastUpdated">Website last updated on January 07, 2026</p>
+                <span class="footer-social">
+                    <a><i class="fa-regular fa-copyright"></i> 2026 Udayam AI Labs. All rights reserved</a>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/navbar.min.js" defer></script>
+</body>
+</html>
