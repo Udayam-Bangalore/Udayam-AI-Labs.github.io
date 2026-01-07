@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy | Udayam AI Labs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="description" content="Privacy Policy for Udayam AI Labs. Learn how we collect, use, and protect your data." />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    
+    <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="assets/images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Udayam AI Labs" />
+    <link rel="manifest" href="assets/images/favicon/site.webmanifest" />
+    
+    <link rel="stylesheet" href="css/min/styles.min.css" />
+    <link rel="stylesheet" href="css/min/navbar.min.css" />
+    <style>
+        :root {
+            --primary-color: #473fc5;
+            --secondary-color: #4f46e5;
+            --primary-gradient: linear-gradient(135deg, rgba(29, 146, 217, 0.85) 0%, rgba(71, 63, 197, 0.85) 71%);
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --text-dark: #1f2937;
+            --text-muted: #6b7280;
+        }
+        
+        .policy-hero {
+            background: var(--primary-gradient);
+            padding: 140px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .policy-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        
+        .policy-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .policy-hero p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .policy-hero .icon-shield {
+            font-size: 4rem;
+            color: rgba(255, 255, 255, 0.3);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .policy-container {
+            max-width: 900px;
+            margin: -40px auto 60px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .policy-card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            padding: 50px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .policy-section {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .policy-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .policy-section h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .policy-section h2 i {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-gradient);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1rem;
+        }
+        
+        .policy-section p {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+        
+        .policy-section ul {
+            margin: 15px 0;
+            padding-left: 0;
+        }
+        
+        .policy-section li {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+            list-style: none;
+        }
+        
+        .policy-section li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 8px;
+            height: 8px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+        }
+        
+        .policy-section li strong {
+            color: var(--text-dark);
+        }
+        
+        .last-updated {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .contact-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #faf5ff 100%);
+            border-radius: 16px;
+            padding: 25px;
+            margin-top: 20px;
+        }
+        
+        .contact-box p {
+            margin-bottom: 10px;
+        }
+        
+        .contact-box a {
+            color: #6366f1;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .contact-box a:hover {
+            color: #a855f7;
+        }
+        
+        @media (max-width: 768px) {
+            .policy-hero {
+                padding: 120px 20px 60px;
+            }
+            .policy-hero h1 {
+                font-size: 2rem;
+            }
+            .policy-card {
+                padding: 30px 20px;
+                border-radius: 16px;
+            }
+            .policy-section h2 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="main-header">
+        <nav class="nav-container">
+            <a href="/" class="logo-link">
+                <img src="assets/images/udayam-ai-labs-logo.png" alt="Udayam AI Labs logo" class="logo-img" />
+                <span class="nav-title">Udayam AI Labs</span>
+            </a>
+            <div class="nav-menu">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="/#services">Services</a></li>
+                    <li><a href="/#training-modules">Courses</a></li>
+                    <li><a href="/events">Events</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+                            About Us <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/about#about-content"><i class="fa-solid fa-user-group"></i> Meet Us</a></li>
+                            <li><a href="/about#ourWork"><i class="fa-solid fa-briefcase"></i> Our Work</a></li>
+                            <li><a href="/about#team"><i class="fa-solid fa-users"></i> Our Team</a></li>
+                            <li><a href="/about#interns"><i class="fa-solid fa-graduation-cap"></i> Our Interns</a></li>
+                            <li><a href="/about#partners"><i class="fa-solid fa-handshake"></i> Our Partners</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/#contact">Contact</a></li>
+                </ul>
+            </div>
+            <button class="menu-toggle" id="menu-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation menu">
+                <svg class="hamburger" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <line class="line line-top" x1="4" y1="8" x2="28" y2="8"></line>
+                    <line class="line line-middle" x1="4" y1="16" x2="28" y2="16"></line>
+                    <line class="line line-bottom" x1="4" y1="24" x2="28" y2="24"></line>
+                </svg>
+            </button>
+        </nav>
+    </header>
+    <div class="nav-overlay" id="nav-overlay"></div>
+
+    <!-- Hero Section -->
+    <section class="policy-hero">
+        <i class="fa-solid fa-shield-halved icon-shield"></i>
+        <h1>Privacy Policy</h1>
+        <p>Your privacy is important to us. Learn how we protect your data.</p>
+    </section>
+
+    <!-- Policy Content -->
+    <main class="policy-container">
+        <div class="policy-card">
+            <div class="policy-section">
+                <h2><i class="fa-solid fa-info-circle"></i> Introduction</h2>
+                <p>Welcome to Udayam AI Labs. We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website <strong>udayam.co.in</strong> and use our services.</p>
+                <p>Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site or use our services.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2><i class="fa-solid fa-database"></i> Information We Collect</h2>
+                <p>We collect information that you provide directly to us, as well as information that is automatically collected when you use our website:</p>
+                <ul>
+                    <li><strong>Personal Information:</strong> Name, email address, phone number, and organization details when you fill out contact forms, register for courses, or request demos.</li>
+                    <li><strong>Payment Information:</strong> When you make purchases, payment details are processed securely through our payment partners. We do not store complete credit card information.</li>
+                    <li><strong>Usage Data:</strong> Information about how you interact with our website, including pages visited, time spent, and navigation patterns.</li>
+                    <li><strong>Device Information:</strong> Browser type, operating system, IP address, and device identifiers for security and analytics purposes.</li>
+                    <li><strong>Communication Data:</strong> Records of correspondence when you contact us via email, phone, or chat.</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2><i class="fa-solid fa-gears"></i> How We Use Your Information</h2>
+                <p>We use the collected information for various purposes to provide and improve our services:</p>
+                <ul>
+                    <li><strong>Service Delivery:</strong> To provide, maintain, and improve our AI training courses, workshops, and educational services.</li>
+                    <li><strong>Communication:</strong> To send you updates, respond to inquiries, and provide customer support.</li>
+                    <li><strong>Marketing:</strong> To send promotional materials about new courses, events, and offers (with your consent).</li>
+                    <li><strong>Analytics:</strong> To understand how users interact with our website and improve user experience.</li>
+                    <li><strong>Security:</strong> To detect, prevent, and address technical issues and security threats.</li>
+                    <li><strong>Legal Compliance:</strong> To comply with applicable laws, regulations, and legal processes.</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2><i class="fa-solid fa-share-nodes"></i> Information Sharing</h2>
+                <p>We do not sell, trade, or rent your personal information to third parties. We may share your information only in the following circumstances:</p>
+                <ul>
+                    <li><strong>Service Providers:</strong> With trusted third-party vendors who assist us in operating our website, conducting our business, or serving our users (e.g., payment processors, email services).</li>
+                    <li><strong>Business Partners:</strong> With educational partners like STEMpedia for course delivery, with appropriate data protection agreements in place.</li>
+                    <li><strong>Legal Requirements:</strong> When required by law or to protect our rights, safety, or property.</li>
+                    <li><strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of assets, with appropriate confidentiality measures.</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2><i class="fa-solid fa-cookie-bite"></i> Cookies & Tracking</h2>
+                <p>We use cookies and similar tracking technologies to enhance your browsing experience:</p>
+                <ul>
+                    <li><strong>Essential Cookies:</strong> Required for the website to function properly.</li>
+                    <li><strong>Analytics Cookies:</strong> Help us understand how visitors interact with our website.</li>
+                    <li><strong>Marketing Cookies:</strong> Used to deliver relevant advertisements and track campaign performance.</li>
+                </ul>
+                <p>You can control cookie preferences through your browser settings. However, disabling certain cookies may affect website functionality.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2><i class="fa-solid fa-lock"></i> Data Security</h2>
+                <p>We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. These measures include:</p>
+                <ul>
+                    <li>SSL/TLS encryption for data transmission</li>
+                    <li>Secure data storage with access controls</li>
+                    <li>Regular security assessments and updates</li>
+                    <li>Employee training on data protection practices</li>
+                </ul>
+                <p>While we strive to protect your information, no method of transmission over the internet is 100% secure. We cannot guarantee absolute security.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2><i class="fa-solid fa-user-shield"></i> Your Rights</h2>
+                <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+                <ul>
+                    <li><strong>Access:</strong> Request a copy of the personal data we hold about you.</li>
+                    <li><strong>Correction:</strong> Request correction of inaccurate or incomplete data.</li>
+                    <li><strong>Deletion:</strong> Request deletion of your personal data under certain circumstances.</li>
+                    <li><strong>Opt-out:</strong> Unsubscribe from marketing communications at any time.</li>
+                    <li><strong>Data Portability:</strong> Request your data in a structured, machine-readable format.</li>
+                </ul>
+                <p>To exercise these rights, please contact us using the information provided below.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2><i class="fa-solid fa-child"></i> Children's Privacy</h2>
+                <p>Our services are designed for educational purposes and may be used by schools for students. We are committed to protecting children's privacy:</p>
+                <ul>
+                    <li>We collect minimal personal information from children under 13 only with parental or school consent.</li>
+                    <li>Parents and guardians can review, modify, or delete their child's information by contacting us.</li>
+                    <li>We do not knowingly collect personal information from children without appropriate consent.</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2><i class="fa-solid fa-pen-to-square"></i> Policy Updates</h2>
+                <p>We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. We will notify you of any material changes by:</p>
+                <ul>
+                    <li>Posting the updated policy on this page with a new "Last Updated" date</li>
+                    <li>Sending an email notification for significant changes (if you have provided your email)</li>
+                </ul>
+                <p>We encourage you to review this policy periodically for the latest information on our privacy practices.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2><i class="fa-solid fa-envelope"></i> Contact Us</h2>
+                <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:</p>
+                <div class="contact-box">
+                    <p><strong>Udayam AI Labs</strong></p>
+                    <p><i class="fa-solid fa-envelope"></i> Email: <a href="mailto:support@udayam.co.in">support@udayam.co.in</a></p>
+                    <p><i class="fa-brands fa-whatsapp"></i> Phone: <a href="https://wa.me/918600302429">+91-8600302429</a></p>
+                    <p><i class="fa-solid fa-globe"></i> Website: <a href="https://udayam.co.in">udayam.co.in</a></p>
+                </div>
+            </div>
+
+            <div class="last-updated">
+                <i class="fa-solid fa-calendar-check"></i> Last Updated: January 07, 2026
+            </div>
+        </div>
+    </main>
+
+    <footer id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="service-underline"></div>
+        <p class="section-subtitle">We'd Love to Hear From You</p>
+        <div class="footer-content">
+            <div class="footer-image">
+                <img src="./assets/images/udayam-ai-labs-mascot.png" alt="Udayam AI Labs Mascot" />
+            </div>
+
+            <!-- form contact -->
+            <form class="contact-form" id="contact-form">
+                <!-- important hidden fields -->
+                <input type="text" name="formName" hidden value="Contact Form" />
+                <input type="text" name="subject" hidden value="You have a new message from Udayam AI Labs Website!!" />
+                <input type="text" name="mobile" hidden value="No Required" />
+                <input type="text" name="organisation" hidden value="No Required" />
+                <!-- normal fields -->
+                <input type="text" placeholder="Full name" name="name" class="nameinput" required />
+                <input type="text" name="email" placeholder="yourmail@domain.com" class="emailinput" required />
+                <textarea name="message" cols="30" rows="10" placeholder="Message" class="messageinput" required></textarea>
+                <button class="cta" id="contactSubmitBtn" type="submit">Send Message</button>
+            </form>
+
+            <!-- contact info and social media icons -->
+            <div class="contact-info">
+                <!-- email -->
+                <span class="footer-social info">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:support@udayam.co.in" target="_blank">support@udayam.co.in</a>
+                </span>
+                <!-- phone -->
+                <span class="footer-social info">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <a href="https://wa.me/918600302429?text=Hello%20Udayam%20AI%20Labs,%20I%20need%20information%20about..." target="_blank">+91-8600302429</a>
+                </span>
+                <section class="footer-social">
+                    <span>Follow us</span>
+                    <ul class="social-links">
+                        <li>
+                            <a href="https://www.facebook.com/people/Udayam-AI-labs/61574847474498" target="_blank" rel="noopener noreferrer" aria-label="Udayam AI Labs Facebook Account Link (opens in new tab)">
+                                <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://x.com/labs_ai31105" target="_blank" rel="noopener noreferrer" aria-label="Udayam AI Labs Twitter/X Account Link (opens in new tab)">
+                                <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/company/udayam-ai-labs" target="_blank" rel="noopener noreferrer" aria-label="Udayam AI Labs LinkedIn Account Link (opens in a new tab)">
+                                <i class="fab fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/udayamai/?igsh=NXIwYmlnejN3dW5s#" target="_blank" rel="noopener noreferrer" aria-label="Udayam AI Labs Instagram Account Link (opens in a new tab)">
+                                <i class="fab fa-instagram" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+                <div class="footer-legal-links">
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    <a href="/terms-conditions">Terms & Conditions</a>
+                </div>
+                <p id="lastUpdated">Website last updated on January 07, 2026</p>
+                <span class="footer-social">
+                    <a><i class="fa-regular fa-copyright"></i> 2026 Udayam AI Labs. All rights reserved</a>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/navbar.min.js" defer></script>
+</body>
+</html>
