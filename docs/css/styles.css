@@ -1987,10 +1987,6 @@ footer {
   height: auto;
   text-align: center;
   background-color: #fff;
-  background-image: url('../assets/images/footer-wave-background.png');
-  background-size: cover;
-  background-position: top;
-  background-repeat: no-repeat;
   padding: 3rem 0 0 0;
 } 
 
