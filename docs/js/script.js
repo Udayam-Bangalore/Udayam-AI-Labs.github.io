@@ -821,8 +821,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
       // default
-      courseSelect.value = "AI for Beginners";
-      updateCourseTrigger("AI for Beginners");
+      courseSelect.value = "Drones Technology";
+      updateCourseTrigger("Drones Technology");
       // open and close options
       courseTrigger.addEventListener("click", (e) => {
         e.stopPropagation();
@@ -898,6 +898,84 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
   /* ENDS OPEN/CLOSE COURSE REGISTRATION MODAL */
+
+  /* STARTS COURSE REGISTRATION FORM SUBMIT HANDLER */
+  const courseRegistrationForm = document.getElementById("course-registration-form");
+  if (courseRegistrationForm) {
+    courseRegistrationForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
+      
+      const submitBtn = document.getElementById("course-submit-btn");
+      const originalText = submitBtn.innerHTML;
+      
+      // Get form values
+      const name = document.getElementById("user-name").value.trim();
+      const email = document.getElementById("user-email").value.trim();
+      const mobile = document.getElementById("user-mobile").value.trim();
+      const course = document.getElementById("course").value;
+      
+      // Validate fields
+      if (!validarSinEspeciales(name) || !validarSinEspeciales(email) || !validarSinEspeciales(mobile)) {
+        alert("Please remove special characters from the form fields.");
+        return;
+      }
+      
+      // Show loading state
+      submitBtn.classList.add("loading");
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = "0.5";
+      submitBtn.style.pointerEvents = "none";
+      submitBtn.style.cursor = "not-allowed";
+      
+      try {
+        // Initialize EmailJS if not already initialized
+        if (!emailjsInitialized) {
+          emailjs.init("r8071XjnXsbmJjqpz");
+          emailjsInitialized = true;
+        }
+        
+        // Prepare template parameters
+        const templateParams = {
+          from_name: name,
+          from_email: email,
+          mobile: mobile,
+          course: course,
+          to_email: "support@udayam.co.in",
+          subject: `New Course Registration: ${course}`,
+          message: `New registration for ${course} course:\n\nName: ${name}\nEmail: ${email}\nMobile: ${mobile}`
+        };
+        
+        // Send email using EmailJS
+        await emailjs.send(
+          "service_1gtj9qj",
+          "template_uk7gybo",
+          templateParams
+        );
+        
+        alert("Registration successful! We will contact you soon.");
+        courseRegistrationForm.reset();
+        courseModal.classList.remove("active");
+        document.body.style.overflow = "";
+      } catch (error) {
+        console.error("Error sending email:", error);
+        alert("Registration submitted! We'll contact you soon. (Email notification failed)");
+        courseRegistrationForm.reset();
+        courseModal.classList.remove("active");
+        document.body.style.overflow = "";
+      } finally {
+        // Restore button state
+        setTimeout(() => {
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+          submitBtn.style.opacity = "1";
+          submitBtn.style.pointerEvents = "auto";
+          submitBtn.style.cursor = "pointer";
+          submitBtn.classList.remove("loading");
+        }, 500);
+      }
+    });
+  }
+  /* ENDS COURSE REGISTRATION FORM SUBMIT HANDLER */
 
 
   /* STARTS LOCATION WRAPPER */
