@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Account Deletion | Longevix</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="description" content="Account Deletion - Learn how to delete your Longevix account and what data is removed." />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    
+    <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="assets/images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Udayam AI Labs" />
+    <link rel="manifest" href="assets/images/favicon/site.webmanifest" />
+    
+    <link rel="stylesheet" href="css/min/navbar.min.css" />
+    <style>
+        :root {
+            --primary-color: #473fc5;
+            --secondary-color: #4f46e5;
+            --primary-gradient: linear-gradient(135deg, rgba(29, 146, 217, 0.85) 0%, rgba(71, 63, 197, 0.85) 71%);
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --text-dark: #1f2937;
+            --text-muted: #6b7280;
+        }
+        
+        .policy-hero {
+            background: var(--primary-gradient);
+            padding: 140px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .policy-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        
+        .policy-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .policy-hero p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .policy-hero .icon-shield {
+            font-size: 4rem;
+            color: rgba(255, 255, 255, 0.3);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .policy-container {
+            max-width: 900px;
+            margin: -40px auto 60px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .policy-card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            padding: 50px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .policy-section {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .policy-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .policy-section h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .policy-section h2 i {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-gradient);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1rem;
+        }
+        
+        .policy-section p {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+        
+        .policy-section ul {
+            margin: 15px 0;
+            padding-left: 0;
+        }
+        
+        .policy-section li {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+            list-style: none;
+        }
+        
+        .policy-section li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 8px;
+            height: 8px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+        }
+        
+        .policy-section li strong {
+            color: var(--text-dark);
+        }
+        
+        .last-updated {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .contact-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #faf5ff 100%);
+            border-radius: 16px;
+            padding: 25px;
+            margin-top: 20px;
+        }
+        
+        .contact-box p {
+            margin-bottom: 10px;
+        }
+        
+        .contact-box a {
+            color: #6366f1;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .contact-box a:hover {
+            color: #a855f7;
+        }
+        
+        .steps-box {
+            background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+            border-radius: 16px;
+            padding: 25px;
+            margin-top: 20px;
+            border: 1px solid #bbf7d0;
+        }
+        
+        .steps-box h3 {
+            color: #166534;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .steps-box ol {
+            margin: 0;
+            padding-left: 24px;
+        }
+        
+        .steps-box li {
+            color: #166534;
+            margin-bottom: 10px;
+            padding-left: 10px;
+        }
+        
+        .steps-box li::before {
+            background: #22c55e;
+        }
+        
+        .delete-box {
+            background: linear-gradient(135deg, #fef2f2 0%, #fff1f2 100%);
+            border-radius: 16px;
+            padding: 25px;
+            margin-top: 20px;
+            border: 1px solid #fecaca;
+        }
+        
+        .delete-box h3 {
+            color: #991b1b;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .retain-box {
+            background: linear-gradient(135deg, #fffbeb 0%, #fefce8 100%);
+            border-radius: 16px;
+            padding: 25px;
+            margin-top: 20px;
+            border: 1px solid #fde68a;
+        }
+        
+        .retain-box h3 {
+            color: #92400e;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .retain-box li::before {
+            background: #f59e0b;
+        }
+        
+        @media (max-width: 768px) {
+            .policy-hero {
+                padding: 120px 20px 60px;
+            }
+            .policy-hero h1 {
+                font-size: 2rem;
+            }
+            .policy-card {
+                padding: 30px 20px;
+                border-radius: 16px;
+            }
+            .policy-section h2 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="main-header">
+        <nav class="nav-container">
+            <a href="/" class="logo-link">
+                <img src="assets/images/udayam-ai-labs-logo.png" alt="Udayam AI Labs logo" class="logo-img" />
+                <span class="nav-title">Udayam AI Labs</span>
+            </a>
+            <div class="nav-menu">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="/#services">Services</a></li>
+                    <li><a href="/#training-modules">Courses</a></li>
+                    <li><a href="/events">Events</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+                            About Us <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/about#about-content"><i class="fa-solid fa-user-group"></i> Meet Us</a></li>
+                            <li><a href="/about#ourWork"><i class="fa-solid fa-briefcase"></i> Our Work</a></li>
+                            <li><a href="/about#team"><i class="fa-solid fa-users"></i> Our Team</a></li>
+                            <li><a href="/about#interns"><i class="fa-solid fa-graduation-cap"></i> Our Interns</a></li>
+                            <li><a href="/about#partners"><i class="fa-solid fa-handshake"></i> Our Partners</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/#contact">Contact</a></li>
+                </ul>
+            </div>
+            <button class="menu-toggle" id="menu-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation menu">
+                <svg class="hamburger" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <line class="line line-top" x1="4" y1="8" x2="28" y2="8"></line>
+                    <line class="line line-middle" x1="4" y1="16" x2="28" y2="16"></line>
+                    <line class="line line-bottom" x1="4" y1="24" x2="28" y2="24"></line>
+                </svg>
+            </button>
+        </nav>
+    </header>
+    <div class="nav-overlay" id="nav-overlay"></div>
+
+    <!-- Hero Section -->
+    <section class="policy-hero">
+        <i class="fa-solid fa-user-xmark icon-shield"></i>
+        <h1>Account Deletion</h1>
+        <p>Account Deletion – Longevix</p>
+    </section>
+
+    <!-- Policy Content -->
+    <main class="policy-container">
+        <div class="policy-card">
+            <div class="policy-section">
+                <h2><i class="fa-solid fa-trash-can"></i> How to Delete Your Account</h2>
+                <p>To delete your account and associated data, please follow one of the methods below:</p>
+                <div class="steps-box">
+                    <h3><i class="fa-solid fa-circle-check"></i> Option 1: In-App Deletion</h3>
+                    <ol>
+                        <li>Log in to the app</li>
+                        <li>Go to Settings → Delete Account</li>
+                    </ol>
+                </div>
+                <div class="steps-box" style="background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%); border-color: #bfdbfe;">
+                    <h3 style="color: #1e40af;"><i class="fa-solid fa-envelope"></i> Option 2: Email Request</h3>
+                    <p style="color: #1e40af; margin-bottom: 15px;">Email us at <a href="mailto:support@longevix.com" style="font-weight: 600;">support@longevix.com</a> from your registered email address.</p>
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <h2><i class="fa-solid fa-check-circle"></i> What We Delete</h2>
+                <p>When you request account deletion, the following data will be permanently removed:</p>
+                <div class="delete-box">
+                    <ul>
+                        <li><strong>Profile info</strong> – All personal information associated with your account</li>
+                        <li><strong>Email/phone</strong> – Your contact information</li>
+                        <li><strong>Uploaded content</strong> – Any files, images, or media you have uploaded</li>
+                        <li><strong>Usage data</strong> – Your activity history and behavioral data</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <h2><i class="fa-solid fa-clock"></i> What We May Retain</h2>
+                <p>For legal, security, and compliance purposes, certain data may be retained for a limited period:</p>
+                <div class="retain-box">
+                    <ul>
+                        <li><strong>Logs for 30 days</strong> – We may retain system logs for up to 30 days for legal and security purposes</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="policy-section">
+                <h2><i class="fa-solid fa-envelope"></i> Contact Us</h2>
+                <p>If you have any questions about account deletion or need assistance, please contact us:</p>
+                <div class="contact-box">
+                    <p><strong>Longevix Support Team</strong></p>
+                    <p><i class="fa-solid fa-envelope"></i> Email: <a href="mailto:support@longevix.com">support@longevix.com</a></p>
+                </div>
+            </div>
+
+            <div class="last-updated">
+                <i class="fa-solid fa-calendar-check"></i> Account Deletion Policy Last Updated: February 04, 2026
+            </div>
+        </div>
+    </main>
+
+    <script src="js/navbar.min.js" defer></script>
+</body>
+</html>
