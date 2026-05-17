@@ -598,6 +598,12 @@ document.addEventListener("DOMContentLoaded", function () {
       logo: "./assets/images/partners/swami.png",
       url: "https://srtmun.ac.in/en/",
     },
+    {
+      // Mit university
+      name: "Mit-Adt University",
+      logo: "./assets/images/partners/mit.jpeg",
+      url: "https://www.mituniversity.ac.in/",
+    },
   ];
   // populate elements:
   const track = document.getElementById("partnersTrack");

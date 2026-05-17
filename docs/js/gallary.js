@@ -122,6 +122,48 @@ document.addEventListener("DOMContentLoaded", () => {
       subtitle: "KV Sunjuwan, Jammu",
       category: "school",
     },
+    {
+      image: "./assets/images/gallery/1_MIT.jpg.jpeg",
+      title: "AI for Young Innovators",
+      subtitle: "KV Sunjuwan, Jammu",
+      category: "school",
+    },
+    {
+      image: "./assets/images/gallery/2_MIT.jpg.jpeg",
+      title: "AI for Young Innovators",
+      subtitle: "KV Sunjuwan, Jammu",
+      category: "school",
+    },
+    {
+      image: "./assets/images/gallery/3_MIT.jpg.jpeg",
+      title: "AI for Young Innovators",
+      subtitle: "KV Sunjuwan, Jammu",
+      category: "school",
+    },
+    {
+      image: "./assets/images/gallery/4_MIT.jpg.jpeg",
+      title: "AI for Young Innovators",
+      subtitle: "KV Sunjuwan, Jammu",
+      category: "school",
+    }, 
+    {
+      image: "./assets/images/gallery/5_MIT.jpg.jpeg",
+      title: "AI for Young Innovators",
+      subtitle: "KV Sunjuwan, Jammu",
+      category: "school",
+    }, 
+    {
+      image: "./assets/images/gallery/6_MIT.jpg.jpeg",
+      title: "AI for Young Innovators",
+      subtitle: "KV Sunjuwan, Jammu",
+      category: "school",
+    },
+    {
+      image: "./assets/images/gallery/7_MIT.jpg.jpeg",
+      title: "AI for Young Innovators",
+      subtitle: "KV Sunjuwan, Jammu",
+      category: "school",
+    },
   ];
 
   // --- 2. ELEMENT SELECTORS ---
