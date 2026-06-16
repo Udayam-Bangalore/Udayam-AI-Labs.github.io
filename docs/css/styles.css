@@ -516,6 +516,15 @@ body {
   .course-header .c-h-icon{
     width: 48px;
     height: 48px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .course-header .c-h-icon img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 
 .course-cards, #free-course-container{
