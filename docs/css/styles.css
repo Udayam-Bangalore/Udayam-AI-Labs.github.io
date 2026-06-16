@@ -1840,31 +1840,27 @@ margin: 15px auto;
 /* partners logo container */
 .partners-track{
   display: flex;
-  /* minwidth image * elements + clones */
-  width: calc(240px*20);
   padding: 1.2rem;
   align-items: center;
   gap: 24px;
-  animation: 40s linear infinite slideLogos both;
   will-change: transform;
 }
-  /* partners logos animation */
-  @keyframes slideLogos {
-    0%{
-      transform: translateX(0);
-    }
-    to{
-       transform: translateX(calc(-240px * 10));
-      /*transform: translateX(-50%);*/
-    }
-  }
   /* partner logo image */
   .partner-logo-image{
     min-width: 240px;
+    width: 240px;
+    flex-shrink: 0;
   }
       .partner-logo-image img{
+        width: 100%;
+        height: auto;
         object-fit: contain;
       }
+  /* smaller logo for Litup Labs */
+  .partner-logo-image[aria-label="Litup Labs"]{
+    width: 140px;
+    min-width: 140px;
+  }
   /* stop animation */
   /* Pausar animación */
 .partners-track.paused {

@@ -604,6 +604,30 @@ document.addEventListener("DOMContentLoaded", function () {
       logo: "./assets/images/partners/mit.jpeg",
       url: "https://www.mituniversity.ac.in/",
     },
+    {
+      //Globus Infocom Limited
+      name: "Globus Systems",
+      logo: "./assets/images/partners/globus.png",
+      url: "https://globussystems.com/"
+    },
+    {
+     //NxtWave
+      name: "NxtWave",
+      logo: "./assets/images/partners/nxtwave.webp",
+      url: "https://learning.ccbp.in/"
+    },
+    {
+     //Tally SOlutions
+      name: "Tally Solutions",
+      logo: "./assets/images/partners/tally-solutions.jpg",
+      url: "https://tallysolutions.com/"
+    },
+    {
+     //Litup Labs
+      name: "Litup Labs",
+      logo: "./assets/images/partners/litup.jpg",
+      url: "https://lituplabs.com/"
+    }
   ];
   // populate elements:
   const track = document.getElementById("partnersTrack");
@@ -620,7 +644,25 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     // duplicate logos (infinite scroll)
     const logosHTML = partners.map(createLogos).join("");
-    track.innerHTML = logosHTML + logosHTML; // automatic clone
+    track.innerHTML = logosHTML + logosHTML;
+
+    // measure and start animation after layout is done
+    requestAnimationFrame(() => {
+      const setWidth = track.scrollWidth / 2;
+      if (setWidth > 0) {
+        const style = document.createElement("style");
+        style.textContent = `
+          @keyframes slideLogos {
+            0% { transform: translateX(0); }
+            to { transform: translateX(${-setWidth}px); }
+          }
+          #partnersTrack {
+            animation: ${partners.length * 4}s linear infinite slideLogos both;
+          }
+        `;
+        document.head.appendChild(style);
+      }
+    });
 
     // stop animation when the user touch/hover:
     class PartnersSlider {

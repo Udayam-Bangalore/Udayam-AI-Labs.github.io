@@ -123,12 +123,6 @@ document.addEventListener("DOMContentLoaded", () => {
       category: "school",
     },
     {
-      image: "./assets/images/gallery/1_MIT.jpg.jpeg",
-      title: "AI for Young Innovators",
-      subtitle: "KV Sunjuwan, Jammu",
-      category: "school",
-    },
-    {
       image: "./assets/images/gallery/2_MIT.jpg.jpeg",
       title: "AI for Young Innovators",
       subtitle: "KV Sunjuwan, Jammu",
