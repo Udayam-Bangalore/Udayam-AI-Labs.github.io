@@ -200,6 +200,7 @@ body {
   font-weight: 500;
   overflow: hidden;
   opacity: .9;
+  text-decoration: none;
   transition: all ease-in .3s;
 }
 /* #1 btn*/
