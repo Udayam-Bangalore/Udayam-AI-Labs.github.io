@@ -9,8 +9,6 @@ yarn.lock
 backend/.vercel/
 
 # --- Environment Variables (Crucial for security) ---
-.env
-.env.local
 .env.development.local
 .env.test.local
 .env.production.local
@@ -21,9 +19,9 @@ backend/.env
 Thumbs.db
 
 # --- IDE / Editor Files ---
-.vscode/
 .idea/
 
 # --- Build Outputs (Optional but recommended) ---
 dist/
 build/
+config.bat
